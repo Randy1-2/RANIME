@@ -1,0 +1,257 @@
+/* --- 1. Variables & Global Styles (UPDATED FOR DARK THEME) --- */
+:root {
+    --primary-blue: #007bff;
+    --accent-red: #dc3545;
+    --text-light: #f0f0f0; /* Light text for dark background */
+    --bg-dark: #121212; /* Near Black Page Background */
+    --card-dark: #1e1e1e; /* Dark Gray Card Background */
+    --border-dark: #3a3a3a;
+}
+/* --- 1. Base Structure (Mostly Unchanged) --- */
+.flipper-carousel-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    position: relative;
+    padding-top: 66.66%;
+    perspective: 1000px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flipper-card-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+
+    /* CRITICAL: Apply the flip animation */
+    animation: auto-flip-wrapper 12s infinite linear;
+}
+
+.flipper-card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    opacity: 0;
+    z-index: 1; /* Default stacking order */
+    transition: opacity 0.5s;
+
+    /* CRITICAL: Image scaling remains the same */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipper-card-face img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* --- 2. Flip Animation Keyframes --- */
+
+/* This animation rotates the ENTIRE wrapper containing all images */
+@keyframes auto-flip-wrapper {
+    /* 12s total duration (4 images * 3s delay) */
+
+    /* 0% to 1% (Initial state: Image 1 visible) */
+    0%, 1% { transform: rotateY(0deg); }
+
+    /* 25% (Flip to Image 2) - This is the duration of the visible flip transition */
+    24%, 25% { transform: rotateY(180deg); }
+
+    /* 26% to 49% (Hold for Image 2) */
+    49%, 50% { transform: rotateY(180deg); }
+
+    /* 50% (Flip back to Image 3/4) */
+    74%, 75% { transform: rotateY(360deg); }
+
+    /* Reset at the end of the loop */
+    100% { transform: rotateY(360deg); }
+}
+
+/* --- 3. Visibility and Z-Index Keyframes --- */
+
+/* This animation controls which image is visible and when the flip happens */
+@keyframes visibility-control {
+    0% { opacity: 1; z-index: 2; } /* Start (Image 1) */
+
+    /* Image 1 Visibility (25% = 3 seconds) */
+    24% { opacity: 1; z-index: 2; }
+    24.1% { opacity: 0; z-index: 1; } /* Hide Image 1 just before the flip transition completes */
+
+    /* Image 2 Visibility */
+    25% { opacity: 1; z-index: 2; }
+    49% { opacity: 1; z-index: 2; }
+    49.1% { opacity: 0; z-index: 1; } /* Hide Image 2 */
+
+    /* Image 3 Visibility */
+    50% { opacity: 1; z-index: 2; }
+    74% { opacity: 1; z-index: 2; }
+    74.1% { opacity: 0; z-index: 1; } /* Hide Image 3 */
+
+    /* Image 4 Visibility */
+    75% { opacity: 1; z-index: 2; }
+    99% { opacity: 1; z-index: 2; }
+    100% { opacity: 0; z-index: 1; }
+}
+
+/* --- 4. Applying Staggered Animations to Each Face --- */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+/* --- 2. Layout & Responsiveness --- */
+
+.login-signup-wrapper {
+    /* ... (unchanged - retains centering) ... */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form-card {
+    background: var(--card-dark); /* Dark card background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    width: 100%;
+    max-width: 400px;
+}
+
+/* --- 3. Typography & Titles (UPDATED TEXT COLORS) --- */
+
+.brand-title {
+    color: grey;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    width:100%;
+    font-weight: 700;
+    background:black;
+}
+
+.form-title {
+    color: var(--text-light); /* White title text */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--primary-blue);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- 4. Form Elements (UPDATED FOR DARK INPUTS) --- */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-light); /* White label text */
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c2c2c; /* Slightly darker input field */
+    color: var(--text-light); /* White input text */
+    border: 1px solid var(--border-dark);
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.4); /* Brighter blue glow */
+    outline: none;
+}
+
+/* Button (Blue) remains high-contrast */
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-blue);
+    color: white;
+    /* ... (rest of button styling unchanged) ... */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.primary-btn:hover {
+    background: #0056b3;
+}
+
+/* --- 5. Alerts and Links (Red & Black/Dark) --- */
+
+.error-message {
+    color: var(--accent-red);
+    background-color: #49282a; /* Darker red background for visibility */
+    border: 1px solid var(--accent-red);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.aux-links {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.link-forgot {
+    color: var(--text-light); /* White link text */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.link-forgot:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.switch-link-container {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-dark); /* Dark gray divider */
+    color: var(--text-light); /* White text for surrounding paragraph */
+}
+
+.switch-link {
+    color: var(--accent-red); /* Using Red for the secondary action link */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-link:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}

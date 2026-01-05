@@ -1,0 +1,95 @@
+<!Doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Ranime Anime Recommendations</title>
+</head>
+<body>
+
+<div class="container">
+<h1>ANIME RECOMMENDATIONS</h1>
+</div>
+<form class="form" role="search" action="{{ url_for('search') }}" method="GET">
+                    <input class="input"
+                           type="search"
+                           placeholder="Search anime"
+                           aria-label="Search"
+                           name="query">
+                    <button class="button" type="submit">Search</button>
+</form>
+<table class="anime-list table" border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr class="anime-list tr">
+      <th class="anime-list th">Anime</th>
+      <th class="anime-list th">Year</th>
+      <th class="anime-list th">Main Character</th>
+      <th class="anime-list th">Genres</th>
+      <th class="anime-list th">Best sites</th>
+      <th class="anime-list th">Watched</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for anime in anime_data %}
+
+    {% set clean_title = anime.title | lower |
+        replace(':', '') |
+        replace('!', '') |
+        replace('\'', '') |
+        replace('’', '') |
+        replace('.', '') |
+        replace(';', '') |
+        replace('-', '') |
+        strip()
+    %}
+
+    {% set final_id = clean_title | replace(' ', '-') %}
+
+    <tr class="anime-list tr" id="{{ final_id }}">
+
+      <td class="anime-list td">{{ anime.title.upper() }}</td>
+      <td class="anime-list td">{{ anime.year }}</td>
+      <td class="anime-list td">{{ anime.main_character }}</td>
+      <td class="anime-list td">{{ anime.genres }}</td>
+
+      <td class="anime-list td">
+        <a href="https://www.animesuge.ltd/search?q={{anime.title.lower()}}" target="_blank">Animesuge</a>
+        | <a href="https://movieboxpro.app" target="_blank">MovieBox</a> |
+        <a href="https://animeheaven.me/search.php?s={{anime.title.lower()}}" target="_blank">AnimeHeaven</a>
+      </td>
+      <td class="anime-list td"><input type="checkbox"></td>
+    </tr>
+
+  {% endfor %}
+
+  </tbody>
+</table>
+<footer>
+  <div class="footer">
+    <h1>Made by Abs_being {{ date }}</h1>
+  </div>
+</footer>
+{% if error_message %}
+<div id="toast" style="
+    position: fixed;
+    top: 120px;
+    right: 120px;
+    background: #ff4444;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    z-index: 1000;">
+    ⚠️ {{ error_message }}
+</div>
+
+<script>
+    // Automatically hide the pop-up after 3 seconds
+    setTimeout(function() {
+        var toast = document.getElementById('toast');
+        toast.style.display = 'none';
+    }, 3000);
+</script>
+{% endif %}
+</body>
+</html>

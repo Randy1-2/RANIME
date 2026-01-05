@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  text-align: center;
+}
+
+.contain {
+  justify-items:center;
+  background: grey;
+
+}
+.des{
+    width:80px;
+    height:80px;
+    margin:10px;
+    padding:0px;
+    object-fit: contain;
+    object-position: center
+
+
+}
+.carousel-item img {
+  max-height: 350px;
+   /* Adjust this value (e.g., 300px, 500px) to your desired height */
+  object-fit: contain; /* Ensures the image covers the area without distortion */
+}
+
+nav {
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+nav a:hover {
+  color: #ff9800;
+}
+
+/* Flip card gallery */
+.pics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.flip-card {
+  width: 300px;
+  height: 350px;
+  max-width:100%;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-front img, .flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  nav {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    margin: 5px 0;
+  }
+}

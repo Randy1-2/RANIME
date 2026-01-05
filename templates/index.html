@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANIME | Your Gateway to Anime</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-..."
+      crossorigin="anonymous">
+</head>
+<body class="bg-black text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">RANIME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('anime') }}">Anime List</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Blog</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('login_page') }}">Log_in</a></li>
+                            <li><a class="dropdown-item" href="#">List</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search" action="{{ url_for('search') }}" method="GET"**>
+                    <input class="form-control form-control-sm me-2"
+                           type="search"
+                           placeholder="{% if error_message %}{{ error_message }}{% else %}Search anime...{% endif %}"
+                           aria-label="Search"
+                           name="query">
+                    <button class="btn btn-outline-info btn-sm" type="submit">Search</button>
+                </form>
+
+                </div>
+        </div>
+    </nav>
+
+    <header class="p-5 text-center bg-dark bg-opacity-50">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-info">RANIME</h1>
+            <p class="lead text-white-50 mt-3">Links of all the best and exciting anime in different genres for you.</p>
+        <br>
+            <a href="{{ url_for('login_page') }}">Sign up here</a>
+        </div>
+    </header>
+    <div class="text-center py-5">
+        <h2 class="text-light">Get the links to all the anime you want here</h2>
+        <a href="{{ url_for('anime') }}" class="btn btn-lg btn-outline-info mt-3 fw-bold">
+            View Full Anime List
+            <span style="font-size: 2em; vertical-align:middle;">&raquo;</span>
+        </a>
+    </div>
+    <section class="py-4">
+        <h3 class="text-center mb-4 text-secondary">✨✨</h3>
+        <div class="container-fluid overflow-hidden">
+            <marquee direction="left">
+                <marquee direction="right">
+                   <img class="des" src="static/01.jpg" alt="Anime 1">
+                   <img class="des" src="static/02.jpg" alt="Anime 2">
+                   <img class="des" src="static/03.jpg" alt="Anime 3">
+                   <img class="des" src="static/04.jpg" alt="Anime 4">
+                   <img class="des" src="static/05.jpg" alt="Anime 5">
+                   <img class="des" src="static/06.jpg" alt="Anime 6">
+                   <img class="des" src="static/07.jpg" alt="Anime 7">
+                   <img class="des" src="static/08.jpg" alt="Anime 8">
+                   <img class="des" src="static/09.jpg" alt="Anime 9">
+                   <img class="des" src="static/10.jpg" alt="Anime 10">
+                   <img class="des" src="static/11.jpg" alt="Anime 11">
+                   <img class="des" src="static/12.jpg" alt="Anime 12">
+                </marquee>
+            </marquee>
+        </div>
+    </section>
+
+    <section class="py-5 bg-grey bg-opacity-75">
+        <h2 class="text-center mb-5 text-info">Trending Now</h2>
+<div class="container">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static/lom.jpg" class="d-block w-100 " alt="image 1">
+    </div>
+    <div class="carousel-item">
+      <img src="static/1p.jpg" class="d-block w-100 " alt="image 2">
+    </div>
+    <div class="carousel-item">
+      <img src="static/ga.jpg" class="d-block w-100 " alt="image 3">
+    </div>
+       <div class="carousel-item">
+      <img src="static/ta.jpg" class="d-block w-100 " alt="image 4">
+    </div>
+       <div class="carousel-item">
+      <img src="static/sa.jpg" class="d-block w-100 " alt="image 4">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+    </section>
+
+
+    <footer class="bg-dark text-center text-white-50 p-3 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; {{ year }} RANIME. All Rights Reserved. | Designed with Bootstrap</p>
+            <p class="small mt-1">
+                <a href="#" class="text-white-50 mx-2">Privacy Policy</a> |
+                <a href="#" class="text-white-50 mx-2">Terms of Use</a> |
+                <a href="mailto:contact@ranime.com" class="text-white-50 mx-2">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% if error_message %}
+<div id="toast" style="
+    position: fixed;
+    top: 120px;
+    right: 120px;
+    background: #ff4444;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    z-index: 1000;">
+    ⚠️ {{ error_message }}
+</div>
+
+<script>
+    // Automatically hide the pop-up after 3 seconds
+    setTimeout(function() {
+        var toast = document.getElementById('toast');
+        toast.style.display = 'none';
+    }, 5000);
+</script>
+{% endif %}
+</body>
+</html>

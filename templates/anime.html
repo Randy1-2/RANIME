@@ -7,16 +7,23 @@
 <body>
 
 <div class="container">
-<h1>ANIME RECOMMENDATIONS</h1>
+    <h1>ANIME RECOMMENDATIONS</h1>
 </div>
+
 <form class="form" role="search" action="{{ url_for('search') }}" method="GET">
-                    <input class="input"
-                           type="search"
-                           placeholder="Search anime"
-                           aria-label="Search"
-                           name="query">
-                    <button class="button" type="submit">Search</button>
+    <input class="input"
+           type="search"
+           placeholder="Search anime"
+           aria-label="Search"
+           name="query"
+           value="{{ search_term if search_term else '' }}">
+    <button class="button" type="submit">Search</button>
+
+    {% if search_term %}
+        <a href="{{ url_for('anime') }}" class="button" style="text-decoration: none; display: inline-block; padding: 5px 10px; background: #555; color: white; border-radius: 4px;">Clear Search</a>
+    {% endif %}
 </form>
+
 <table class="anime-list table" border="1" cellpadding="8" cellspacing="0">
   <thead>
     <tr class="anime-list tr">
@@ -31,22 +38,15 @@
   <tbody>
 
   {% for anime in anime_data %}
-
+    {# Logic to create clean IDs for the rows #}
     {% set clean_title = anime.title | lower |
-        replace(':', '') |
-        replace('!', '') |
-        replace('\'', '') |
-        replace('’', '') |
-        replace('.', '') |
-        replace(';', '') |
-        replace('-', '') |
-        strip()
+        replace(':', '') | replace('!', '') | replace('\'', '') |
+        replace('’', '') | replace('.', '') | replace(';', '') |
+        replace('-', '') | strip()
     %}
-
     {% set final_id = clean_title | replace(' ', '-') %}
 
     <tr class="anime-list tr" id="{{ final_id }}">
-
       <td class="anime-list td">{{ anime.title.upper() }}</td>
       <td class="anime-list td">{{ anime.year }}</td>
       <td class="anime-list td">{{ anime.main_character }}</td>
@@ -59,16 +59,24 @@
       </td>
       <td class="anime-list td"><input type="checkbox"></td>
     </tr>
-
+  {% else %}
+    {# This section displays if anime_data is empty (no matches found) #}
+    <tr>
+      <td colspan="6" style="text-align: center; padding: 20px;">
+        <strong>No anime found matching your search.</strong>
+      </td>
+    </tr>
   {% endfor %}
 
   </tbody>
 </table>
+
 <footer>
   <div class="footer">
     <h1>Made by Abs_being {{ date }}</h1>
   </div>
 </footer>
+
 {% if error_message %}
 <div id="toast" style="
     position: fixed;
@@ -84,10 +92,9 @@
 </div>
 
 <script>
-    // Automatically hide the pop-up after 3 seconds
     setTimeout(function() {
         var toast = document.getElementById('toast');
-        toast.style.display = 'none';
+        if(toast) toast.style.display = 'none';
     }, 3000);
 </script>
 {% endif %}

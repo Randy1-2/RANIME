@@ -34,7 +34,7 @@
                             Pages
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Blog</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('blog') }}">Blog</a></li>
 
                             <li><a class="dropdown-item" href="#">List</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -92,6 +92,7 @@
             <h1 class="display-4 fw-bold text-info">RANIME</h1>
             <p class="lead text-white-50 mt-3">Links of all the best and exciting anime in different genres for you.</p>
         <br>
+            <a href="{{ url_for('blog') }}" ><h5>Visit our blog here </h5></a>
 
         </div>
     </header>
@@ -185,72 +186,23 @@
         </div>
     </div>
 </section>
-    <div class="container py-5">
-    <h2 class="text-info mb-4">🔥 Epic New Seasons Coming Soon</h2>
-    <ul class="list-unstyled">
-        <li class="mb-3">
-            <a href="https://bclover.jp/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Black Clover (Season 2)</strong> — Confirmed 2026
+<section>
+    <h2 style="color: #f87171; border-bottom: 2px solid #30363d;">🔥 2026 New Season Premieres</h2>
+    <div class="new-season-grid">
+        {% for anime in upcoming_2026 %}
+        <div class="new-season-card">
+            <span class="status-badge" style="background: #f87171; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem;">
+                {{ anime.status }}
+            </span>
+            <h3 style="font-size: 1.1rem; margin: 15px 0 5px 0;">{{ anime.name }}</h3>
+            <p style="color: #8b949e; font-size: 0.85rem; margin-bottom: 15px;">{{ anime.date }}</p>
+            <a href="{{ anime.site }}" target="_blank" style="color: #58a6ff; text-decoration: none; font-size: 0.8rem; font-weight: bold;">
+                OFFICIAL SITE →
             </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://bleach-anime.com/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Bleach: TYBW (Part 4)</strong> — July 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://bluelock-pr.com/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Blue Lock (Season 3)</strong> — Summer 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://chainsawman.dog/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Chainsaw Man (Season 2)</strong> — Confirmed 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://frieren-anime.jp/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Frieren: Beyond Journey’s End (Season 2)</strong> — January 16, 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://j-select.com/hellsparadise" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Hell’s Paradise (Season 2)</strong> — January 11, 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://jujutsukaisen.jp/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Jujutsu Kaisen (Season 3)</strong> — January 8, 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://mushokutensei.jp/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Mushoku Tensei (Season 3)</strong> — April 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://onepunchman-anime.net/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>One-Punch Man (Season 3)</strong> — Mid-2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://ichigoproduction.com/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Oshi no Ko (Season 3)</strong> — January 14, 2026
-            </a>
-        </li>
-        <li class="mb-3">
-            <a href="https://re-zero-anime.jp/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>Re:Zero (Season 4)</strong> — April 2026
-            </a>
-        </li>
-
-        <li class="mb-3">
-            <a href="https://ten-sura.com/" class="text-white text-decoration-none" target="_blank">
-                <span class="text-info">●</span> <strong>That Time I Got Reincarnated as a Slime (Season 4)</strong> — April 2026
-            </a>
-        </li>
-    </ul>
-</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
     <footer class="bg-dark text-center text-white-50 p-3 mt-auto">
         <div class="container">

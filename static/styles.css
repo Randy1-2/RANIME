@@ -10,6 +10,17 @@ body {
   background: grey;
 
 }
+.sidebar {
+    background: #1c2128;
+    border: 1px solid blue;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 40px;
+}
+.sidebar h3 { color: #f87171; margin-top: 0; border-bottom: 1px solid blue; padding-bottom: 10px; }
+.upcoming-list { list-style: none; padding: 0; }
+.upcoming-item { padding: 8px 0; border-bottom: 1px solid blue; font-size: 0.9rem; }
+.upcoming-date { color: #f87171; font-weight: bold; float: right; }
 .des{
     width:80px;
     height:80px;
@@ -19,6 +30,36 @@ body {
     object-position: center
 
 
+}
+/* Specific 4-column grid for 2026 releases */
+.new-season-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forces exactly 4 columns */
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Card styling specifically for new seasons */
+.new-season-card {
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.new-season-card:hover {
+    transform: translateY(-5px);
+    border-color: #f87171;
+}
+
+/* Responsive: drop to 2 columns on tablets, 1 on phones */
+@media (max-width: 1024px) {
+    .new-season-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .new-season-grid { grid-template-columns: 1fr; }
 }
 .carousel-item img {
   max-height: 350px;

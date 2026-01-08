@@ -7,12 +7,31 @@ app.secret_key = "any_random_string_you_want_12345"
 # --- CUSTOM JINJA FILTER ---
 @app.template_filter('strip')
 def strip_filter(s):
-    """Jinja filter to apply the Python strip() method."""
+
     if s is not None:
         return s.strip()
     return ""
 
 
+upcoming_2026 = [
+    # WINTER RELEASES (AIRING NOW)
+    {"name": "Jujutsu Kaisen (Season 3)", "date": "Jan 8, 2026", "status": "Premiered!", "site": "https://jujutsukaisen.jp/"},
+    {"name": "Hell’s Paradise (Season 2)", "date": "Jan 11, 2026", "status": "This Sunday", "site": "https://jigokuraku.com/"},
+    {"name": "Oshi no Ko (Season 3)", "date": "Jan 14, 2026", "status": "Next Week", "site": "https://ichigoproduction.com/"},
+    {"name": "Frieren (Season 2)", "date": "Jan 16, 2026", "status": "Next Week", "site": "https://frieren-anime.jp/"},
+
+    # SPRING RELEASES
+    {"name": "Mushoku Tensei (Season 3)", "date": "April 2026", "status": "Spring", "site": "https://mushokutensei.jp/"},
+    {"name": "Slime (Season 4)", "date": "April 2026", "status": "Spring", "site": "https://ten-sura.com/"},
+    {"name": "Re:Zero (Season 4)", "date": "April 2026", "status": "Spring", "site": "https://re-zero-anime.jp/"},
+
+    # SUMMER & BEYOND
+    {"name": "Bleach: TYBW (Part 4)", "date": "July 2026", "status": "Official Finale", "site": "https://bleach-anime.com/"},
+    {"name": "Blue Lock (Season 3)", "date": "Summer 2026", "status": "Summer", "site": "https://bluelock-pr.com/"},
+    {"name": "One-Punch Man (S3)", "date": "Mid-2026", "status": "Confirmed", "site": "https://onepunchman-anime.net/"},
+    {"name": "Black Clover (Season 2)", "date": "Late 2026", "status": "Confirmed", "site": "https://bclover.jp/"},
+    {"name": "Chainsaw Man (S2)", "date": "2026", "status": "TBA", "site": "https://chainsawman.dog/"}
+]
 # --- DATA DEFINITION ---
 ANIME_DATA = [
     {'title': 'Akame ga Kill!', 'year': 2014, 'main_character': 'Akame', 'genres': 'Action, Dark Fantasy, Drama'},
@@ -93,7 +112,46 @@ ANIME_DATA = [
 
 @app.route("/")
 def home():
-    return render_template("index.html", year=datetime.datetime.now().year)
+    return render_template("index.html", year=datetime.datetime.now().year,upcoming_2026=upcoming_2026)
+
+categories_data = {
+    "Anime of the Year": [
+        {"year": 2025, "winner": "Solo Leveling"},
+        {"year": 2024, "winner": "Jujutsu Kaisen S2"},
+        {"year": 2023, "winner": "Cyberpunk: Edgerunners"},
+        {"year": 2022, "winner": "Attack on Titan Final Season Pt 1"},
+        {"year": 2021, "winner": "Jujutsu Kaisen"},
+        {"year": 2017, "winner": "Yuri!!! on Ice"},
+        {"year": 2014, "winner": "Attack on Titan (TAAF)"},
+        {"year": 2012, "winner": "Madoka Magica (TAAF)"}
+    ],
+    "Best Animation": [
+        {"year": 2025, "winner": "Demon Slayer: Hashira Training Arc"},
+        {"year": 2024, "winner": "Demon Slayer: Swordsmith Village Arc"},
+        {"year": 2022, "winner": "Demon Slayer: Mugen Train Arc"},
+        {"year": 2020, "winner": "Mob Psycho 100 II"},
+        {"year": 2019, "winner": "Violet Evergarden"},
+        {"year": 2016, "winner": "One Punch Man (Fans' Choice)"}
+    ],
+    "Best Drama": [
+        {"year": 2025, "winner": "Frieren: Beyond Journey's End"},
+        {"year": 2024, "winner": "Attack on Titan Final Chapters Special 1"},
+        {"year": 2021, "winner": "Fruits Basket Season 2"},
+        {"year": 2020, "winner": "Vinland Saga"},
+        {"year": 2017, "winner": "Erased"}
+    ],
+    "Best Film": [
+        {"year": 2025, "winner": "Look Back"},
+        {"year": 2024, "winner": "Suzume"},
+        {"year": 2023, "winner": "Jujutsu Kaisen 0"},
+        {"year": 2022, "winner": "Demon Slayer: Mugen Train Movie"},
+        {"year": 2018, "winner": "Your Name"},
+        {"year": 2010, "winner": "Summer Wars (TAAF)"}
+    ]}
+@app.route("/blog")
+def blog():
+    # Sort data so newest years appear first
+    return render_template('blog.html', categories=categories_data)
 
 @app.route("/anime")
 def anime():

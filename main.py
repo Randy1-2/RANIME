@@ -87,7 +87,7 @@ ANIME_DATA = [
     {'title': 'Cyberpunk: Edgerunners', 'year': 2022, 'main_character': 'David Martinez', 'genres': 'Sci-Fi, Action, Cyberpunk'},
     {'title': 'The Eminence in Shadow', 'year': 2022, 'main_character': 'Cid Kagenou', 'genres': 'Action, Comedy, Fantasy'},
     {'title': 'Wind Breaker', 'year': 2024, 'main_character': 'Haruka Sakura', 'genres': 'Action, Delinquent'},
-
+    {'title': 'Record of Ragnarok', 'year': 2017, 'main_character': 'Brunhilde', 'genres': 'Adventure, Dark fantasy, Martial arts'},
 ]
 
 

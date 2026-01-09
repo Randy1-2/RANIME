@@ -1,45 +1,96 @@
+/* --- Global Reset & Base Styles --- */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: black;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0d1117; /* Darker theme for better contrast */
+  color: white;
   text-align: center;
 }
 
 .contain {
-  justify-items:center;
-  background: grey;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #0d1117;
 }
+
+/* --- Navigation --- */
+nav {
+  background-color: black;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #30363d;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+nav a:hover {
+  color: #f87171; /* Matches your header accent color */
+}
+
+/* --- Sidebar / Upcoming List --- */
 .sidebar {
     background: #1c2128;
-    border: 1px solid blue;
+    border: 1px solid #30363d;
     border-radius: 12px;
     padding: 20px;
     margin-top: 40px;
+    width: 90%;
+    max-width: 500px;
 }
-.sidebar h3 { color: #f87171; margin-top: 0; border-bottom: 1px solid blue; padding-bottom: 10px; }
-.upcoming-list { list-style: none; padding: 0; }
-.upcoming-item { padding: 8px 0; border-bottom: 1px solid blue; font-size: 0.9rem; }
-.upcoming-date { color: #f87171; font-weight: bold; float: right; }
-.des{
-    width:80px;
-    height:80px;
-    margin:10px;
-    padding:0px;
-    object-fit: contain;
-    object-position: center
 
-
+.sidebar h3 { 
+    color: #f87171; 
+    margin-top: 0; 
+    border-bottom: 1px solid #30363d; 
+    padding-bottom: 10px; 
 }
-/* Specific 4-column grid for 2026 releases */
+
+.upcoming-list { 
+    list-style: none; 
+    padding: 0; 
+}
+
+.upcoming-item { 
+    padding: 12px 0; 
+    border-bottom: 1px solid #30363d; 
+    font-size: 0.9rem; 
+    text-align: left;
+}
+
+.upcoming-date { 
+    color: #f87171; 
+    font-weight: bold; 
+    float: right; 
+}
+
+/* --- 4-Column Grid (New Seasons) --- */
 .new-season-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Forces exactly 4 columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 25px;
+    width: 90%;
+    max-width: 1200px;
 }
 
-/* Card styling specifically for new seasons */
 .new-season-card {
     background: #1c2128;
     border: 1px solid #30363d;
@@ -54,60 +105,20 @@ body {
     border-color: #f87171;
 }
 
-/* Responsive: drop to 2 columns on tablets, 1 on phones */
-@media (max-width: 1024px) {
-    .new-season-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-    .new-season-grid { grid-template-columns: 1fr; }
-}
-.carousel-item img {
-  max-height: 350px;
-   /* Adjust this value (e.g., 300px, 500px) to your desired height */
-  object-fit: contain; /* Ensures the image covers the area without distortion */
-}
-
-nav {
-  background-color: black;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /* allows wrapping on small screens */
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-}
-
-nav img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-nav a:hover {
-  color: #ff9800;
-}
-
-/* Flip card gallery */
+/* --- Flip Card Gallery --- */
 .pics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   justify-items: center;
   margin-top: 30px;
+  width: 100%;
 }
 
 .flip-card {
   width: 300px;
-  height: 350px;
-  max-width:100%;
-  perspective: 1000px;
+  height: 400px;
+  perspective: 1000px; /* Required for 3D effect */
 }
 
 .flip-inner {
@@ -127,32 +138,56 @@ nav a:hover {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.flip-front img, .flip-back img {
+.flip-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .flip-back {
+  background: #1c2128;
+  color: white;
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #f87171;
 }
 
+/* --- Images & Media --- */
+.des {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    object-fit: contain;
+}
 
-/* Responsive tweaks */
+.carousel-item img {
+  max-height: 350px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* --- Responsive Breakpoints --- */
 @media (max-width: 1024px) {
-  nav {
-    gap: 10px;
-  }
+    .new-season-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }
 
 @media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav a {
-    margin: 5px 0;
-  }
+    .new-season-grid { 
+        grid-template-columns: 1fr; 
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }

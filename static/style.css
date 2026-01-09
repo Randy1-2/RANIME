@@ -1,4 +1,4 @@
-/* Global reset */
+/* --- Global Reset --- */
 * {
   margin: 0;
   padding: 0;
@@ -7,43 +7,68 @@
 
 /* --- Base & Body --- */
 body {
-  /* Darker, more sophisticated background */
   background: #0f171e; /* Deep Charcoal/Navy */
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif; /* Modern font choice (assuming Inter is available) */
-  color: #e2e8f0; /* Light text for dark background */
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #e2e8f0;
   line-height: 1.6;
 }
-.form{
-justify-items:left;
+
+/* --- Form & Search Section --- */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  margin-top: 20px;
 }
+
 .input {
-            width: 30%;
-            padding:10px;
-            margin: 10px 0;
-            border: thick;
-            border-radius: 200px
+  width: 30%;
+  padding: 12px 20px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 50px; /* Pill shape */
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-        }
+.input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+}
+
 .button {
-            width: 10%;
-            padding: 10px;
-            background: grey;
-            border: thick;
-            border-radius: 5px;
-            cursor: pointer;
+  padding: 12px 25px;
+  background: #334155;
+  color: #7dd3fc;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-        }
+.button:hover {
+  background: #06b6d4;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
+
 /* --- Header --- */
 .container h1 {
   padding: 25px;
-  /* Sleek, deep gradient */
-  background: linear-gradient(135deg, #1e293b, #0f172a); /* Dark Blue/Charcoal gradient */
+  background: linear-gradient(135deg, #1e293b, #0f172a);
   text-align: center;
-  color: #7dd3fc; /* Light Blue Accent */
+  color: #7dd3fc;
   font-size: 2.8rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  border-bottom: 3px solid #06b6d4; /* Teal line */
+  border-bottom: 3px solid #06b6d4;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -52,178 +77,107 @@ nav {
   display: flex;
   justify-content: center;
   gap: 30px;
-  background: #1e293b; /* Slightly lighter dark background for contrast */
+  background: #1e293b;
   padding: 12px;
 }
 
 nav a {
-  color: #7dd3fc; /* Light Blue/Teal Accent */
+  color: #7dd3fc;
   text-decoration: none;
-  font-weight: 600; /* Semi-bold */
-  font-size: 1.05rem;
+  font-weight: 600;
   transition: color 0.3s ease, transform 0.2s;
-  padding: 0 5px;
 }
 
 nav a:hover {
-  color: #06b6d4; /* Brighter Teal on hover */
+  color: #06b6d4;
   transform: translateY(-2px);
 }
 
-/* --- Anime List Container --- */
+/* --- Anime List Table --- */
 .anime-list {
-  background: #111827; /* Near-black container */
-  color: #e2e8f0;
+  background: #111827;
   padding: 35px;
   border-radius: 12px;
   max-width: 1100px;
-  margin: 50px auto;
-  border: 1px solid #1f2937; /* Subtle border */
+  margin: 40px auto;
+  border: 1px solid #1f2937;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Heading */
 .anime-list h2 {
   text-align: center;
-  color: #06b6d4; /* Bright Teal */
+  color: #06b6d4;
   margin-bottom: 8px;
   font-size: 2.4rem;
-  text-shadow: 0 0 5px rgba(6, 182, 212, 0.5); /* Soft glow */
 }
 
-.anime-list p {
-  text-align: center;
-  color: #94a3b8; /* Muted descriptor text */
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-}
-
-/* --- Table Styling --- */
 .anime-list table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Table header */
-.anime-list thead {
-  background: #1e293b; /* Header background matches nav */
+  margin-top: 20px;
 }
 
 .anime-list th {
+  background: #1e293b;
   padding: 16px;
-  text-align: center;
   color: #fff;
-  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
   border-bottom: 2px solid #06b6d4;
 }
 
-/* Table rows */
 .anime-list td {
   padding: 16px;
   text-align: center;
-  border-bottom: 1px solid #334155; /* Lighter separator */
-  font-size: 1rem;
+  border-bottom: 1px solid #334155;
 }
 
-/* Alternate row colors */
-.anime-list tbody tr:nth-child(even) {
-  background: #1f2937; /* Slightly lighter shade */
-}
+.anime-list tbody tr:nth-child(even) { background: #1f2937; }
 
-.anime-list tbody tr:nth-child(odd) {
-  background: #111827; /* Matches container */
-}
-
-/* Hover effect */
 .anime-list tbody tr:hover {
-  background: #334155; /* Medium dark shade on hover */
+  background: #334155;
   transition: background 0.2s ease;
-  cursor: pointer;
-}
-
-/* Links */
-.anime-list a {
-  color: #7dd3fc;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.anime-list a:hover {
-  text-decoration: underline;
-  color: #06b6d4; /* Brighter Teal on hover */
-}
-
-/* --- Responsive Tweaks --- */
-@media (max-width: 768px) {
-  .anime-list {
-    margin: 20px 10px;
-    padding: 20px;
-  }
-
-  .container h1 {
-    font-size: 2rem;
-    padding: 15px;
-  }
-
-  nav {
-    gap: 15px;
-  }
-
-  /* Standard mobile table rules */
-  .anime-list table,
-  .anime-list thead,
-  .anime-list tbody,
-  .anime-list th,
-  .anime-list td,
-  .anime-list tr {
-    display: block;
-    width: 100%;
-  }
-
-  .anime-list tr {
-    margin-bottom: 15px;
-    border: 1px solid #334155;
-    border-radius: 4px;
-  }
-
-  .anime-list td {
-    text-align: right; /* Align value to the right */
-    padding: 10px;
-    position: relative;
-    border: none;
-  }
-
-  .anime-list td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #7dd3fc;
-    display: inline-block; /* Keep label and value on same line */
-    float: left; /* Push label to the left */
-  }
-
-  .anime-list th {
-    display: none;
-  }
 }
 
 /* --- Footer --- */
 .footer {
   text-align: center;
-  background: #1e293b; /* Matches nav/header background */
-  padding: 20px;
+  background: #1e293b;
+  padding: 30px;
   margin-top: 50px;
-  color: #94a3b8; /* Muted text */
+  color: #94a3b8;
   border-top: 1px solid #334155;
 }
 
-.footer h1 {
-  font-size: 1.3rem;
-  margin: 0;
-  color: #06b6d4; /* Teal accent */
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .input { width: 60%; }
+  .button { width: 30%; }
+
+  .anime-list table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  .anime-list th { display: none; }
+
+  .anime-list tr {
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+  }
+
+  .anime-list td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .anime-list td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+    color: #7dd3fc;
+  }
 }

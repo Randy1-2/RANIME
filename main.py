@@ -1,3 +1,4 @@
+import requests
 from flask import Flask, render_template, request, redirect, url_for, flash
 import datetime
 
@@ -30,7 +31,7 @@ upcoming_2026 = [
     {"name": "Blue Lock (Season 3)", "date": "Summer 2026", "status": "Summer", "site": "https://bluelock-pr.com/"},
     {"name": "One-Punch Man (S3)", "date": "Mid-2026", "status": "Confirmed", "site": "https://onepunchman-anime.net/"},
     {"name": "Black Clover (Season 2)", "date": "Late 2026", "status": "Confirmed", "site": "https://bclover.jp/"},
-    {"name": "Chainsaw Man (S2)", "date": "2026", "status": "TBA", "site": "https://chainsawman.dog/"}
+    {"name": "Chainsaw Man (S2)", "date": "2026", "status": "TBA", "site": "https://chainsawman.dog/"},
 ]
 # --- DATA DEFINITION ---
 ANIME_DATA = [
@@ -123,7 +124,7 @@ categories_data = {
         {"year": 2021, "winner": "Jujutsu Kaisen"},
         {"year": 2017, "winner": "Yuri!!! on Ice"},
         {"year": 2014, "winner": "Attack on Titan (TAAF)"},
-        {"year": 2012, "winner": "Madoka Magica (TAAF)"}
+        {"year": 2012, "winner": "Madoka Magica (TAAF)"},
     ],
     "Best Animation": [
         {"year": 2025, "winner": "Demon Slayer: Hashira Training Arc"},
@@ -131,14 +132,14 @@ categories_data = {
         {"year": 2022, "winner": "Demon Slayer: Mugen Train Arc"},
         {"year": 2020, "winner": "Mob Psycho 100 II"},
         {"year": 2019, "winner": "Violet Evergarden"},
-        {"year": 2016, "winner": "One Punch Man (Fans' Choice)"}
+        {"year": 2016, "winner": "One Punch Man (Fans' Choice)"},
     ],
     "Best Drama": [
         {"year": 2025, "winner": "Frieren: Beyond Journey's End"},
         {"year": 2024, "winner": "Attack on Titan Final Chapters Special 1"},
         {"year": 2021, "winner": "Fruits Basket Season 2"},
         {"year": 2020, "winner": "Vinland Saga"},
-        {"year": 2017, "winner": "Erased"}
+        {"year": 2017, "winner": "Erased"},
     ],
     "Best Film": [
         {"year": 2025, "winner": "Look Back"},
@@ -146,13 +147,171 @@ categories_data = {
         {"year": 2023, "winner": "Jujutsu Kaisen 0"},
         {"year": 2022, "winner": "Demon Slayer: Mugen Train Movie"},
         {"year": 2018, "winner": "Your Name"},
-        {"year": 2010, "winner": "Summer Wars (TAAF)"}
-    ]}
-@app.route("/blog")
-def blog():
+        {"year": 2010, "winner": "Summer Wars (TAAF)"},
+    ]},
+@app.route("/info")
+def info():
     # Sort data so newest years appear first
-    return render_template('blog.html', categories=categories_data)
+    return render_template('info.html', categories=categories_data)
 
+
+def get_anime_details(anime_id):
+    # Fetch Staff Info
+    staff_res = requests.get(f"https://api.jikan.moe/v4/anime/{anime_id},/staff")
+    # Fetch User Reviews
+    review_res = requests.get(f"https://api.jikan.moe/v4/anime/{anime_id},/reviews")
+
+    staff = staff_res.json().get('data', [])[:5]  # Top 5 staff members
+    reviews = review_res.json().get('data', [])[:3]  # Top 3 fan reviews
+
+    return staff, reviews
+
+
+@app.route('/blog')
+@app.route('/blog')
+def blog():
+    epic_scenes = [
+        {
+            "title": "Attack on Titan",
+            "tag": "Action, Dark Fantasy",
+            "moment": "Eren transforms into a Titan in front of everyone during the Battle of Trost, shocking both characters and viewers.",
+            "episode": "Episode 8",
+            "impact": "Established one of the most adrenaline-pumping sequences in recent anime."
+        },
+        {
+            "title": "Demon Slayer",
+            "tag": "Action, Supernatural",
+            "moment": "Tanjiro uses the Hinokami Kagura (Dance of the Fire God) to save Nezuko from Rui's threads.",
+            "episode": "Episode 19",
+            "impact": "A visual masterclass that redefined the standard for modern shonen animation."
+        },
+        {
+            "title": "Your Name",
+            "tag": "Romance, Supernatural",
+            "moment": "Taki and Mitsuha finally meet on the mountainside during twilight, only to forget each other's names as sun sets.",
+            "episode": "Feature Film",
+            "impact": "Created a globally recognized 'heartbreak' moment that transcends language barriers."
+        },
+        {
+            "title": "Naruto Shippuden",
+            "tag": "Action, Fantasy",
+            "moment": "Naruto arrives in Sage Mode on top of a giant toad to face Pain in the ruins of the Hidden Leaf.",
+            "episode": "Episode 163",
+            "impact": "The ultimate 'hero's return' that cemented Naruto's legacy as the village's protector."
+        },
+        {
+            "title": "Toradora!",
+            "tag": "Romance, Slice of Life",
+            "moment": "Taiga breaks down in the street, realizing her true feelings for Ryuuji after he leaves her apartment.",
+            "episode": "Episode 19",
+            "impact": "Commonly cited as one of the most raw and emotional 'Christmas Eve' moments in anime history."
+        },
+
+
+
+    {
+        "title": "Attack on Titan",
+        "tag": "Action, Dark Fantasy",
+        "moment": "Eren transforms into a Titan in front of everyone during the Battle of Trost, shocking both characters and viewers",
+        "episode": "Episode 8",
+        "impact": "Established one of the most adrenaline-pumping sequences in recent anime"
+    },
+    {
+        "title": "My Hero Academia",
+        "tag": "Action, Superhero",
+        "moment": "Midoriya and Bakugo finally team up against Overhaul, showcasing a powerful hero vs villain showdown",
+        "episode": "Episode 13, Season 4",
+        "impact": "Epic fight scene with intense animations and emotional character development"
+    },
+    {
+        "title": "Naruto Shippuden",
+        "tag": "Action, Shonen",
+        "moment": "Naruto unleashes Kurama’s full power to save comrades during the Pain arc",
+        "episode": "Episode 163",
+        "impact": "Iconic power-up moment that defines Naruto’s growth and determination"
+    },
+    {
+        "title": "One Piece",
+        "tag": "Adventure, Action",
+        "moment": "Luffy declares war on the World Government following Ace’s death in Marineford, motivating thousands",
+        "episode": "Episode 505",
+        "impact": "A pivotal character moment with massive emotional resonance and hype factor"
+    },
+        {
+            "title": "Steins;Gate",
+            "tag": "Sci-Fi, Thriller",
+            "moment": "Okabe finally saves Mayuri from a time-loop death scenario, delivering high tension and emotional payoff",
+            "episode": "Episode 22-23",
+            "impact": "Emotional climax and critical plot twist, widely regarded as one of the most intense anime moments"
+        },
+        {
+            "title": "Attack on Titan",
+            "tag": "Action, Dark Fantasy",
+            "moment": "Eren transforms into a Titan in front of everyone during the Battle of Trost, shocking both characters and viewers",
+            "episode": "Episode 8",
+            "impact": "Established one of the most adrenaline-pumping sequences in recent anime"
+        },
+        {
+            "title": "My Hero Academia",
+            "tag": "Action, Superhero",
+            "moment": "Midoriya and Bakugo finally team up against Overhaul, showcasing a powerful hero vs villain showdown",
+            "episode": "Episode 13, Season 4",
+            "impact": "Epic fight scene with intense animations and emotional character development"
+        },
+        {
+            "title": "Naruto Shippuden",
+            "tag": "Action, Shonen",
+            "moment": "Naruto unleashes Kurama’s full power to save comrades during the Pain arc",
+            "episode": "Episode 163",
+            "impact": "Iconic power-up moment that defines Naruto’s growth and determination"
+        },
+        {"title": "Dorohedoro", "tag": "Action, Dark Fantasy, Mystery",
+         "moment": "Caiman uncovers the sorcerer responsible for his reptile head in a chaotic, bloody showdown."},
+        {"title": "Vivy: Fluorite Eye's Song", "tag": "Sci-Fi, Music, Action",
+         "moment": "Vivy defies time to prevent a catastrophic war between humans and AI with a breathtaking musical battle."},
+        {"title": "Demon Slayer: Kimetsu no Yaiba", "tag": "Action, Supernatural, Dark Fantasy",
+         "moment": "Tanjiro and Nezuko fight Upper-Rank demons in a high-stakes, visually stunning battle with sword and fire techniques."},
+        {"title": "Metallic Rouge", "tag": "Sci-Fi, Mecha, Action",
+         "moment": "Rouge confronts the Immortal Nine with her bio-mechanic suit, challenging the limits of human and android cooperation."},
+        {"title": "Shadows House", "tag": "Mystery, Psychological, Supernatural",
+         "moment": "Emilico uncovers the grotesque truth behind the masters and the living dolls, revealing the mansion's dark secrets."},
+        {"title": "Parasyte: The Maxim", "tag": "Horror, Sci-Fi, Action",
+         "moment": "Shinichi and Migi face a ruthless Parasyte, blending body horror with an ethical dilemma of coexistence."},
+        {"title": "Akame ga Kill!", "tag": "Action, Adventure, Dark Fantasy",
+         "moment": "Tatsumi participates in a high-stakes battle against the Imperial forces alongside Akame, showcasing sword combat and revenge plots."},
+        {"title": "Jujutsu Kaisen", "tag": "Action, Supernatural, Shōnen",
+         "moment": "Yuji Itadori battles cursed spirits using Sukuna’s transformative powers in intense, perfectly choreographed sequences."},
+        {"title": "Kaiju No. 8", "tag": "Action, Sci-Fi, Shōnen",
+         "moment": "Kafka Hibino undergoes a transformation into a kaiju while fighting giant monsters, balancing humor and adrenaline."},
+        {"title": "Chainsaw Man", "tag": "Horror, Action, Dark Fantasy",
+         "moment": "Denji confronts massive devils with his chainsaw transformations, blending gore and high-paced action."},
+        {"title": "The Promised Neverland", "tag": "Thriller, Mystery, Horror",
+         "moment": "Emma, Norman, and Ray escape from a demon-operated orphanage after uncovering its horrifying truth."},
+        {"title": "Deca-Dence", "tag": "Sci-Fi, Post-Apocalyptic, Action",
+         "moment": "Natsume discovers that the post-apocalyptic world is a simulated reality controlled by an elite society."},
+        {"title": "Gargantia on the Verdurous Planet", "tag": "Sci-Fi, Adventure, Mecha",
+         "moment": "Ledo crash-lands on Earth and must adapt while defending humans against Hideauze monsters with robot combat."},
+        {"title": "No. 6", "tag": "Sci-Fi, Dystopia, Mystery",
+         "moment": "Shion and Nezumi uncover shocking truths about the city-state's government and its manipulative secrets."},
+        {"title": "Ergo Proxy", "tag": "Psychological, Sci-Fi, Mystery",
+         "moment": "Re-l Mayer confronts the enigmatic Proxy, revealing existential truths about humanity and self-awareness."},
+        {"title": "Land of the Lustrous", "tag": "Fantasy, Adventure, Sci-Fi",
+         "moment": "Phosphophyllite uncovers the Lunarians' motives while defending brittle gemstone beings, reflecting survival and identity."},
+        {"title": "God Eater", "tag": "Action, Sci-Fi, Post-Apocalyptic",
+         "moment": "Lenka Utsugi confronts monstrous Aragami using God Arcs, combining human skill and bio-engineered powers."},
+        {"title": "Kabaneri of the Iron Fortress", "tag": "Action, Steampunk, Horror",
+         "moment": "Ikoma breaches the armored walls fighting the Kabane with his improvised steam gun, echoing titan combat chaos."},
+        {"title": "Neon Genesis Evangelion", "tag": "Mecha, Psychological, Sci-Fi",
+         "moment": "Shinji pilots Eva-01 against an enigmatic angel, balancing human trauma and existential threats."},
+        {"title": "Re:Zero – Starting Life in Another World", "tag": "Isekai, Psychological, Fantasy",
+         "moment": "Subaru dies repeatedly to orchestrate a strategy against witches and monsters, uncovering resilience and despair."},
+
+    ]
+
+
+
+
+    return render_template('blog.html', scenes=epic_scenes)
 @app.route("/anime")
 def anime():
     query = request.args.get('query', '').lower().strip()
@@ -174,7 +333,7 @@ def search():
         return redirect(url_for('anime', query=query))
     else:
         # Flash message stays for ONE load, then disappears on refresh
-        flash(f"Not Found. Check full site for: {query}")
+        flash(f"Not Found. Check full site for: {query},")
         return redirect(url_for('home'))
 if __name__ == "__main__":
     app.run(debug=True)

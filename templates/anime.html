@@ -1,8 +1,96 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Ranime Anime Recommendations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Ranime Anime Recommendations</title>
+
+    <style>
+        /* 2. BASE MOBILE-FRIENDLY STYLES */
+        body {
+            font-size: 18px; /* Bigger base font */
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container h1 { font-size: 2.2rem; text-align: center; }
+
+        .form {
+            display: flex;
+            flex-direction: column; /* Stack search on mobile */
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .input {
+            padding: 15px; /* Larger touch target */
+            font-size: 1.1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .button {
+            padding: 15px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* 3. RESPONSIVE TABLE TRANSFORMATION */
+        @media screen and (max-width: 768px) {
+            /* Force the table to not behave like a table */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            /* Hide table headers (but keep for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                margin-bottom: 20px;
+                border: 2px solid #444;
+                border-radius: 8px;
+                background: #1a1a1a; /* Assuming a dark theme based on previous context */
+                padding: 10px;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50% !important;
+                text-align: right;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #333;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            /* Label each row with the header title */
+            td:before {
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+                font-weight: bold;
+                text-align: left;
+                color: #ff4d4d;
+            }
+
+            td:last-child { border-bottom: 0; }
+        }
+
+        /* Desktop specific styling */
+        @media screen and (min-width: 769px) {
+            .form { flex-direction: row; }
+            .input { width: auto; flex-grow: 1; }
+            .button { width: auto; }
+        }
+    </style>
 </head>
 <body>
 
@@ -20,47 +108,39 @@
     <button class="button" type="submit">Search</button>
 
     {% if search_term %}
-        <a href="{{ url_for('anime') }}" class="button" style="text-decoration: none; display: inline-block; padding: 5px 10px; background: #555; color: white; border-radius: 4px;">Clear Search</a>
+        <a href="{{ url_for('anime') }}" class="button" style="text-decoration: none; display: flex; align-items: center; justify-content: center; background: #555; color: white; border-radius: 4px;">Clear Search</a>
     {% endif %}
 </form>
 
-<table class="anime-list table" border="1" cellpadding="8" cellspacing="0">
+<table class="anime-list table">
   <thead>
-    <tr class="anime-list tr">
-      <th class="anime-list th">Anime</th>
-      <th class="anime-list th">Year</th>
-      <th class="anime-list th">Main Character</th>
-      <th class="anime-list th">Genres</th>
-      <th class="anime-list th">Best sites</th>
-      <th class="anime-list th">Watched</th>
+    <tr>
+      <th>Anime</th>
+      <th>Year</th>
+      <th>Main Character</th>
+      <th>Genres</th>
+      <th>Best sites</th>
+      <th>Watched</th>
     </tr>
   </thead>
   <tbody>
 
   {% for anime in anime_data %}
-    {# Logic to create clean IDs for the rows #}
-    {% set clean_title = anime.title | lower |
-        replace(':', '') | replace('!', '') | replace('\'', '') |
-        replace('’', '') | replace('.', '') | replace(';', '') |
-        replace('-', '') | strip()
-    %}
+    {% set clean_title = anime.title | lower | replace(':', '') | replace('!', '') | replace('\'', '') | replace('’', '') | replace('.', '') | replace(';', '') | replace('-', '') | strip() %}
     {% set final_id = clean_title | replace(' ', '-') %}
 
-    <tr class="anime-list tr" id="{{ final_id }}">
-      <td class="anime-list td">{{ anime.title.upper() }}</td>
-      <td class="anime-list td">{{ anime.year }}</td>
-      <td class="anime-list td">{{ anime.main_character }}</td>
-      <td class="anime-list td">{{ anime.genres }}</td>
-
-      <td class="anime-list td">
-        <a href="https://www.animesuge.ltd/search?q={{anime.title.lower()}}" target="_blank">Animesuge</a>
-        | <a href="https://movieboxpro.app" target="_blank">MovieBox</a> |
-        <a href="https://animeheaven.me/search.php?s={{anime.title.lower()}}" target="_blank">AnimeHeaven</a>
+    <tr id="{{ final_id }}">
+      <td data-label="Anime"><strong>{{ anime.title.upper() }}</strong></td>
+      <td data-label="Year">{{ anime.year }}</td>
+      <td data-label="Character">{{ anime.main_character }}</td>
+      <td data-label="Genres">{{ anime.genres }}</td>
+      <td data-label="Sites">
+        <a href="https://www.animesuge.ltd/search?q={{anime.title.lower()}}" target="_blank">Animesuge</a> |
+        <a href="https://movieboxpro.app" target="_blank">MovieBox</a>
       </td>
-      <td class="anime-list td"><input type="checkbox"></td>
+      <td data-label="Watched"><input type="checkbox" style="transform: scale(1.5);"></td>
     </tr>
   {% else %}
-    {# This section displays if anime_data is empty (no matches found) #}
     <tr>
       <td colspan="6" style="text-align: center; padding: 20px;">
         <strong>No anime found matching your search.</strong>
@@ -72,31 +152,9 @@
 </table>
 
 <footer>
-  <div class="footer">
-    <h1>Made by Abs_being {{ date }}</h1>
+  <div class="footer" style="padding-top: 30px; text-align: center;">
+    <p>Made by Abs_being {{ date }}</p>
   </div>
 </footer>
-
-{% if error_message %}
-<div id="toast" style="
-    position: fixed;
-    top: 120px;
-    right: 120px;
-    background: #ff4444;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-    z-index: 1000;">
-    ⚠️ {{ error_message }}
-</div>
-
-<script>
-    setTimeout(function() {
-        var toast = document.getElementById('toast');
-        if(toast) toast.style.display = 'none';
-    }, 3000);
-</script>
-{% endif %}
 </body>
 </html>

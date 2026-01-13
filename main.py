@@ -18,8 +18,8 @@ upcoming_2026 = [
     # WINTER RELEASES (AIRING NOW)
     {"name": "Jujutsu Kaisen (Season 3)", "date": "Jan 8, 2026", "status": "Premiered!", "site": "https://jujutsukaisen.jp/"},
     {"name": "Hell’s Paradise (Season 2)", "date": "Jan 11, 2026", "status": "Premiered!", "site": "https://jigokuraku.com/"},
-    {"name": "Oshi no Ko (Season 3)", "date": "Jan 14, 2026", "status": "Next Week", "site": "https://ichigoproduction.com/"},
-    {"name": "Frieren (Season 2)", "date": "Jan 16, 2026", "status": "Next Week", "site": "https://frieren-anime.jp/"},
+    {"name": "Oshi no Ko (Season 3)", "date": "Jan 14, 2026", "status": "This Wednesday", "site": "https://ichigoproduction.com/"},
+    {"name": "Frieren (Season 2)", "date": "Jan 16, 2026", "status": "This Friday", "site": "https://frieren-anime.jp/"},
 
     # SPRING RELEASES
     {"name": "Mushoku Tensei (Season 3)", "date": "April 2026", "status": "Spring", "site": "https://mushokutensei.jp/"},

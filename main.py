@@ -35,279 +35,260 @@ upcoming_2026 = [
 ]
 # --- DATA DEFINITION ---
 ANIME_DATA = [
-    {'title': 'Akame ga Kill!', 'year': 2014, 'main_character': 'Akame', 'genres': 'Action, Dark Fantasy, Drama'},
-    {'title': 'Attack on Titan', 'year': 2013, 'main_character': 'Eren Yeager',
-     'genres': 'Action, Dark Fantasy, Post-apocalyptic'},
-    {'title': 'Apothecary Diaries', 'year': 2024, 'main_character': 'Mau-mau', 'genres': 'Romance , Drama '},
-    {'title': 'Bleach', 'year': 2004, 'main_character': 'Ichigo Kurosaki', 'genres': 'Action, Supernatural, Adventure'},
-    {'title': 'Blue Exorcist', 'year': 2011, 'main_character': 'Rin Okumura',
-     'genres': 'Action, Supernatural, Fantasy'},
-    {'title': 'Code Geass', 'year': 2006, 'main_character': 'Lelouch Lamperouge', 'genres': 'Mecha, Military, Drama'},
-    {'title': 'Dandadan', 'year': 2025, 'main_character': 'Ken Takakura', 'genres': 'Supernatural, Comedy, Action'},
-    {'title': 'Death Note', 'year': 2006, 'main_character': 'Light Yagami',
-     'genres': 'Psychological Thriller, Supernatural, Mystery'},
-    {'title': 'Demon Slayer', 'year': 2019, 'main_character': 'Tanjiro Kamado',
-     'genres': 'Action, Dark Fantasy, Adventure'},
-    {'title': 'Dragon Ball Z', 'year': 1989, 'main_character': 'Goku', 'genres': 'Action, Martial Arts, Adventure'},
-    {'title': 'Dress up darling', 'year': 2018, 'main_character': 'Gojou', 'genres': 'Romance, Fashion, Drama'},
-    {'title': 'Fairy Tail', 'year': 2009, 'main_character': 'Natsu Dragneel', 'genres': 'Action, Adventure, Fantasy'},
-    {'title': 'Frieren: Beyond Journey’s End', 'year': 2023, 'main_character': 'Frieren',
-     'genres': 'Fantasy, Drama, Adventure'},
-    {'title': 'Fullmetal Alchemist: Brotherhood', 'year': 2009, 'main_character': 'Edward Elric',
-     'genres': 'Action, Adventure, Dark Fantasy'},
-    {'title': 'Gachiakuta', 'year': 2025, 'main_character': 'Rudo', 'genres': 'Action, Supernatural'},
-    {'title': 'Gintama', 'year': 2006, 'main_character': 'Gintoki Sakata', 'genres': 'Comedy, Action, Parody'},
-    {'title': 'Haikyuu!!', 'year': 2014, 'main_character': 'Shoyo Hinata', 'genres': 'Sports, Comedy, Drama'},
-    {'title': 'High school of the Dead', 'year': 2006, 'main_character': 'Takashi', 'genres': 'Ecchi, Supernatural'},
-    {'title': 'Hunter x Hunter', 'year': 2011, 'main_character': 'Gon Freecss', 'genres': 'Action, Adventure, Fantasy'},
-    {'title': 'Jujutsu Kaisen', 'year': 2020, 'main_character': 'Yuji Itadori',
-     'genres': 'Action, Dark Fantasy, Supernatural'},
-    {'title': 'Kaiju No. 8', 'year': 2025, 'main_character': 'Kafka Hibino', 'genres': 'Action, Sci-Fi, Fantasy'},
-    {'title': 'KonoSuba', 'year': 2016, 'main_character': 'Kazuma Satou', 'genres': 'Comedy, Fantasy, Isekai'},
-    {'title': 'Lord of the Mysteries', 'year': 2025, 'main_character': 'Klein Moretti', 'genres': 'Mystery, Fantasy, Supernatural', },
-    {'title': 'Made in Abyss', 'year': 2017, 'main_character': 'Riko', 'genres': 'Adventure, Dark Fantasy, Drama'},
-    {'title': 'Masamune-kun\'s Revenge', 'year': 2017, 'main_character': 'Masamune Makabe',
-     'genres': 'Romantic Comedy, Slice of Life'},
-    {'title': 'Mob Psycho 100', 'year': 2016, 'main_character': 'Shigeo "Mob" Kageyama',
-     'genres': 'Action, Comedy, Supernatural'},
-    {'title': 'My Hero Academia', 'year': 2016, 'main_character': 'Izuku Midoriya',
-     'genres': 'Action, Superhero, Coming-of-age'},
-    {'title': 'Naruto', 'year': 2002, 'main_character': 'Naruto Uzumaki', 'genres': 'Action, Adventure, Coming-of-age'},
-    {'title': 'Neon Genesis Evangelion', 'year': 1995, 'main_character': 'Shinji Ikari',
-     'genres': 'Mecha, Psychological, Drama'},
-    {'title': 'One Piece', 'year': 1999, 'main_character': 'Monkey D. Luffy', 'genres': 'Action, Adventure, Fantasy'},
-    {'title': 'One Punch Man', 'year': 2015, 'main_character': 'Saitama', 'genres': 'Action, Comedy, Superhero'},
-    {'title': 'Parasyte: The Maxim', 'year': 2014, 'main_character': 'Shinichi Izumi',
-     'genres': 'Horror, Sci-Fi, Action'},
-    {'title': 'Pokemon', 'year': 1997, 'main_character': 'Ash Ketchum', 'genres': 'Adventure, Fantasy, Family'},
-    {'title': 'Re:Zero', 'year': 2016, 'main_character': 'Subaru Natsuki', 'genres': 'Fantasy, Isekai, Drama'},
-    {'title': 'Sakamoto Days', 'year': 2025, 'main_character': 'Taro Sakamoto', 'genres': 'Action, Comedy'},
-    {'title': 'Sailor Moon', 'year': 1992, 'main_character': 'Usagi Tsukino',
-     'genres': 'Magical Girl, Romance, Fantasy'},
-    {'title': 'Samurai Champloo', 'year': 2004, 'main_character': 'Mugen & Jin',
-     'genres': 'Action, Historical, Adventure'},
-    {'title': 'Sentenced to be a hero', 'year': 2026, 'main_character': 'Xylo Forbartz', 'genres': 'Dark fantasy'},
-    {'title': 'Solo Leveling', 'year': 2024, 'main_character': 'Sung Jin-Woo', 'genres': 'Action, Fantasy, Adventure'},
-    {'title': 'Spy x Family', 'year': 2022, 'main_character': 'Loid Forger', 'genres': 'Comedy, Action, Slice of Life'},
-    {'title': 'Steins;Gate', 'year': 2011, 'main_character': 'Rintarou Okabe', 'genres': 'Sci-Fi, Thriller, Drama'},
-    {'title': 'The Summer Hikaru Died', 'year': 2025, 'main_character': 'Yoshiki',
-     'genres': 'Psychological Thriller, Supernatural, Horror'},
-    {'title': 'Tokyo Ghoul', 'year': 2014, 'main_character': 'Kaneki Ken', 'genres': 'Dark Fantasy, Horror, Action'},
-    {'title': 'Tougen Anki', 'year': 2025, 'main_character': 'Shiki Ichinose',
-     'genres': 'Action, Dark Fantasy, Supernatural'},
-    {'title': 'Toradora!', 'year': 2008, 'main_character': 'Ryuuji Takasu', 'genres': 'Romantic Comedy, Slice of Life'},
-    {'title': 'Trigun', 'year': 1998, 'main_character': 'Vash the Stampede', 'genres': 'Action, Sci-Fi, Western'},
-    {'title': 'Vinland Saga', 'year': 2019, 'main_character': 'Thorfinn', 'genres': 'Historical, Action, Drama'},
-    {'title': 'Blue lock', 'year': 2022, 'main_character': 'Isagi Yoichi', 'genres': 'Sports, Thriller'},
-    {'title': 'Chainsaw Man', 'year': 2022, 'main_character': 'Denji', 'genres': 'Action, Dark Fantasy, Gore'},
-    {'title': 'Oshi no Ko', 'year': 2023, 'main_character': 'Aqua Hoshino', 'genres': 'Drama, Mystery, Supernatural'},
-    {'title': 'Hell’s Paradise', 'year': 2023, 'main_character': 'Gabimaru', 'genres': 'Action, Adventure, Fantasy'},
-    {'title': 'Mashle: Magic and Muscles', 'year': 2023, 'main_character': 'Mash Burnedead', 'genres': 'Comedy, Fantasy, Action'},
-    {'title': 'Black Clover', 'year': 2017, 'main_character': 'Asta', 'genres': 'Action, Fantasy, Adventure'},
-    {'title': 'Cyberpunk: Edgerunners', 'year': 2022, 'main_character': 'David Martinez', 'genres': 'Sci-Fi, Action, Cyberpunk'},
-    {'title': 'The Eminence in Shadow', 'year': 2022, 'main_character': 'Cid Kagenou', 'genres': 'Action, Comedy, Fantasy'},
-    {'title': 'Wind Breaker', 'year': 2024, 'main_character': 'Haruka Sakura', 'genres': 'Action, Delinquent'},
-    {'title': 'Record of Ragnarok', 'year': 2017, 'main_character': 'Brunhilde', 'genres': 'Adventure, Dark fantasy, Martial arts'},
-{'title': '86', 'year': 2021, 'main_character': 'Shinei Nouzen', 'genres': 'Mecha, Military, Sci-Fi'},
 
-{'title': 'A Place Further Than the Universe', 'year': 2018, 'main_character': 'Mari Tamaki', 'genres': 'Adventure, Slice of Life'},
-
-{'title': 'Afro Samurai', 'year': 2007, 'main_character': 'Afro', 'genres': 'Action, Adventure, Samurai'},
-
-{'title': 'Akame ga Kill!', 'year': 2014, 'main_character': 'Tatsumi', 'genres': 'Action, Dark Fantasy'},
-
-{'title': 'Akira', 'year': 1988, 'main_character': 'Shotaro Kaneda', 'genres': 'Sci-Fi, Cyberpunk, Action'},
-
-{'title': 'Angel Beats!', 'year': 2010, 'main_character': 'Yuzuru Otonashi', 'genres': 'Drama, Supernatural, Comedy'},
-
-{'title': 'Another', 'year': 2012, 'main_character': 'Koichi Sakakibara', 'genres': 'Horror, Mystery, Supernatural'},
-
-{'title': 'Assassination Classroom', 'year': 2015, 'main_character': 'Koro-sensei', 'genres': 'Action, Comedy, School'},
-
-{'title': 'Attack on Titan', 'year': 2013, 'main_character': 'Eren Yeager', 'genres': 'Action, Dark Fantasy, Mystery'},
-
-{'title': 'Azumanga Daioh', 'year': 2002, 'main_character': 'Chiyo Mihama', 'genres': 'Comedy, Slice of Life'},
-
-{'title': 'Baccano!', 'year': 2007, 'main_character': 'Isaac Dian', 'genres': 'Action, Mystery, Supernatural'},
-
-{'title': 'Banana Fish', 'year': 2018, 'main_character': 'Ash Lynx', 'genres': 'Action, Thriller, Drama'},
-
-{'title': 'Berserk', 'year': 1997, 'main_character': 'Guts', 'genres': 'Dark Fantasy, Action, Tragedy'},
-
-{'title': 'Black Clover', 'year': 2017, 'main_character': 'Asta', 'genres': 'Action, Fantasy, Shounen'},
-
-{'title': 'Black Lagoon', 'year': 2006, 'main_character': 'Rokuro Okajima', 'genres': 'Action, Crime, Thriller'},
-
-{'title': 'Bleach', 'year': 2004, 'main_character': 'Ichigo Kurosaki', 'genres': 'Action, Supernatural, Shounen'},
-
-{'title': 'Blue Exorcist', 'year': 2011, 'main_character': 'Rin Okumura', 'genres': 'Action, Supernatural, Fantasy'},
-
-{'title': 'Blue Lock', 'year': 2022, 'main_character': 'Yoichi Isagi', 'genres': 'Sports, Drama'},
-
-{'title': 'Bungo Stray Dogs', 'year': 2016, 'main_character': 'Atsushi Nakajima', 'genres': 'Action, Mystery, Supernatural'},
-
-{'title': 'Cardcaptor Sakura', 'year': 1998, 'main_character': 'Sakura Kinomoto', 'genres': 'Magical Girl, Romance, Comedy'},
-
-{'title': 'Castle in the Sky', 'year': 1986, 'main_character': 'Pazu', 'genres': 'Adventure, Fantasy, Sci-Fi'},
-
-{'title': 'Chainsaw Man', 'year': 2022, 'main_character': 'Denji', 'genres': 'Action, Dark Fantasy, Horror'},
-
-{'title': 'Clannad', 'year': 2007, 'main_character': 'Tomoya Okazaki', 'genres': 'Drama, Romance, Slice of Life'},
-
-{'title': 'Code Geass', 'year': 2006, 'main_character': 'Lelouch vi Britannia', 'genres': 'Mecha, Military, Thriller'},
-
-{'title': 'Cowboy Bebop', 'year': 1998, 'main_character': 'Spike Spiegel', 'genres': 'Sci-Fi, Space Western, Noir'},
-
-{'title': 'Cyberpunk: Edgerunners', 'year': 2022, 'main_character': 'David Martinez', 'genres': 'Cyberpunk, Action, Sci-Fi'},
-
-{'title': 'D.Gray-man', 'year': 2006, 'main_character': 'Allen Walker', 'genres': 'Action, Adventure, Dark Fantasy'},
-
-{'title': 'Darker than Black', 'year': 2007, 'main_character': 'Hei', 'genres': 'Action, Mystery, Sci-Fi'},
-
-{'title': 'Death Note', 'year': 2006, 'main_character': 'Light Yagami', 'genres': 'Psychological Thriller, Supernatural'},
-
-{'title': 'Death Parade', 'year': 2015, 'main_character': 'Decim', 'genres': 'Drama, Psychological, Supernatural'},
-
-{'title': 'Demon Slayer', 'year': 2019, 'main_character': 'Tanjiro Kamado', 'genres': 'Action, Supernatural, Historical'},
-
-{'title': 'Detective Conan', 'year': 1996, 'main_character': 'Shinichi Kudo', 'genres': 'Mystery, Crime, Shounen'},
-
-{'title': 'Devilman Crybaby', 'year': 2018, 'main_character': 'Akira Fudo', 'genres': 'Action, Horror, Supernatural'},
-
-{'title': 'Digimon Adventure', 'year': 1999, 'main_character': 'Taichi Yagami', 'genres': 'Adventure, Fantasy, Sci-Fi'},
-
-{'title': 'Dororo', 'year': 2019, 'main_character': 'Hyakkimaru', 'genres': 'Action, Adventure, Historical'},
-
-{'title': 'Dr. Stone', 'year': 2019, 'main_character': 'Senku Ishigami', 'genres': 'Sci-Fi, Adventure, Shounen'},
-
-{'title': 'Dragon Ball Z', 'year': 1989, 'main_character': 'Goku', 'genres': 'Action, Adventure, Martial Arts'},
-
-{'title': 'Durarara!!', 'year': 2010, 'main_character': 'Mikado Ryuugamine', 'genres': 'Action, Mystery, Supernatural'},
-
-{'title': 'Elfen Lied', 'year': 2004, 'main_character': 'Lucy', 'genres': 'Horror, Psychological, Sci-Fi'},
-
-{'title': 'Erased', 'year': 2016, 'main_character': 'Satoru Fujinuma', 'genres': 'Mystery, Psychological, Supernatural'},
-
-{'title': 'Ergo Proxy', 'year': 2006, 'main_character': 'Re-l Mayer', 'genres': 'Sci-Fi, Mystery, Psychological'},
-
-{'title': 'Eureka Seven', 'year': 2005, 'main_character': 'Renton Thurston', 'genres': 'Mecha, Romance, Sci-Fi'},
-
-{'title': 'Eyeshield 21', 'year': 2005, 'main_character': 'Sena Kobayakawa', 'genres': 'Sports, Comedy'},
-
-{'title': 'Fairy Tail', 'year': 2009, 'main_character': 'Natsu Dragneel', 'genres': 'Action, Adventure, Fantasy'},
-
-{'title': 'Fate/Zero', 'year': 2011, 'main_character': 'Kiritsugu Emiya', 'genres': 'Action, Fantasy, Supernatural'},
-
-{'title': 'Fire Force', 'year': 2019, 'main_character': 'Shinra Kusakabe', 'genres': 'Action, Supernatural, Sci-Fi'},
-
-{'title': 'FLCL', 'year': 2000, 'main_character': 'Naota Nandaba', 'genres': 'Sci-Fi, Comedy, Surrealism'},
-
-{'title': 'Food Wars!', 'year': 2015, 'main_character': 'Soma Yukihira', 'genres': 'Gourmet, Comedy, Ecchi'},
-
-{'title': 'Fruits Basket', 'year': 2019, 'main_character': 'Tohru Honda', 'genres': 'Romance, Drama, Supernatural'},
-
-{'title': 'Fullmetal Alchemist: Brotherhood', 'year': 2009, 'main_character': 'Edward Elric', 'genres': 'Action, Adventure, Fantasy'},
-
-{'title': 'Gantz', 'year': 2004, 'main_character': 'Kei Kurono', 'genres': 'Action, Horror, Sci-Fi'},
-
-{'title': 'Gintama', 'year': 2006, 'main_character': 'Gintoki Sakata', 'genres': 'Action, Comedy, Historical'},
-
-{'title': 'Golden Kamuy', 'year': 2018, 'main_character': 'Saichi Sugimoto', 'genres': 'Action, Adventure, Historical'},
-
-{'title': 'Great Teacher Onizuka', 'year': 1999, 'main_character': 'Eikichi Onizuka', 'genres': 'Comedy, Drama, School'},
-
-{'title': 'Guilty Crown', 'year': 2011, 'main_character': 'Shu Ouma', 'genres': 'Action, Sci-Fi, Drama'},
-
-{'title': 'Gurren Lagann', 'year': 2007, 'main_character': 'Simon', 'genres': 'Mecha, Action, Adventure'},
-
-{'title': 'Haikyu!!', 'year': 2014, 'main_character': 'Shoyo Hinata', 'genres': 'Sports, Comedy, Drama'},
-
-{'title': 'Hellsing Ultimate', 'year': 2006, 'main_character': 'Alucard', 'genres': 'Action, Horror, Supernatural'},
-
-{'title': 'Highschool of the Dead', 'year': 2010, 'main_character': 'Takashi Komuro', 'genres': 'Action, Horror, Ecchi'},
-
-{'title': 'Hunter x Hunter', 'year': 2011, 'main_character': 'Gon Freecss', 'genres': 'Action, Adventure, Fantasy'},
-
-{'title': 'InuYasha', 'year': 2000, 'main_character': 'Inuyasha', 'genres': 'Action, Adventure, Fantasy'},
-
-{'title': 'JoJo’s Bizarre Adventure', 'year': 2012, 'main_character': 'Jonathan Joestar', 'genres': 'Action, Adventure, Supernatural'},
-
-{'title': 'Jujutsu Kaisen', 'year': 2020, 'main_character': 'Yuji Itadori', 'genres': 'Action, Supernatural, Fantasy'},
-
-{'title': 'Kaguya-sama: Love is War', 'year': 2019, 'main_character': 'Kaguya Shinomiya', 'genres': 'Comedy, Romance, Psychological'},
-
-{'title': 'Kill la Kill', 'year': 2013, 'main_character': 'Ryuko Matoi', 'genres': 'Action, Comedy, Ecchi'},
-
-{'title': 'Kimi ni Todoke', 'year': 2009, 'main_character': 'Sawako Kuronuma', 'genres': 'Romance, Slice of Life, School'},
-
-{'title': 'Kingdom', 'year': 2012, 'main_character': 'Li Xin', 'genres': 'Action, Historical, Military'},
-
-{'title': 'Konosuba', 'year': 2016, 'main_character': 'Kazuma Sato', 'genres': 'Comedy, Fantasy, Isekai'},
-
-{'title': 'Kuroko’s Basketball', 'year': 2012, 'main_character': 'Tetsuya Kuroko', 'genres': 'Sports, Comedy'},
-
-{'title': 'Land of the Lustrous', 'year': 2017, 'main_character': 'Phosphophyllite', 'genres': 'Fantasy, Action, Drama'},
-
-{'title': 'Legend of the Galactic Heroes', 'year': 1988, 'main_character': 'Reinhard von Lohengramm', 'genres': 'Sci-Fi, Military, Drama'},
-
-{'title': 'Log Horizon', 'year': 2013, 'main_character': 'Shiroe', 'genres': 'Adventure, Fantasy, Sci-Fi'},
-
-{'title': 'Love, Chunibyo & Other Delusions', 'year': 2012, 'main_character': 'Yuta Togashi', 'genres': 'Comedy, Romance'},
-
-{'title': 'Lucky Star', 'year': 2007, 'main_character': 'Konata Izumi', 'genres': 'Comedy, Slice of Life'},
-
-{'title': 'Made in Abyss', 'year': 2017, 'main_character': 'Riko', 'genres': 'Adventure, Dark Fantasy, Mystery'},
-
-{'title': 'Magi: The Labyrinth of Magic', 'year': 2012, 'main_character': 'Aladdin', 'genres': 'Adventure, Fantasy, Action'},
-
-{'title': 'March Comes in Like a Lion', 'year': 2016, 'main_character': 'Rei Kiriyama', 'genres': 'Drama, Slice of Life'},
-
-{'title': 'Mob Psycho 100', 'year': 2016, 'main_character': 'Shigeo Kageyama', 'genres': 'Action, Comedy, Supernatural'},
-
-{'title': 'Monster', 'year': 2004, 'main_character': 'Kenzo Tenma', 'genres': 'Psychological Thriller, Mystery, Noir'},
-
-{'title': 'Mushishi', 'year': 2005, 'main_character': 'Ginko', 'genres': 'Adventure, Supernatural, Mystery'},
-
-{'title': 'My Hero Academia', 'year': 2016, 'main_character': 'Izuku Midoriya', 'genres': 'Action, School, Shounen'},
-
-{'title': 'Nana', 'year': 2006, 'main_character': 'Nana Osaki', 'genres': 'Drama, Romance, Music'},
-
-{'title': 'Naruto', 'year': 2002, 'main_character': 'Naruto Uzumaki', 'genres': 'Action, Adventure, Shounen'},
-
-{'title': 'Neon Genesis Evangelion', 'year': 1995, 'main_character': 'Shinji Ikari', 'genres': 'Mecha, Psychological, Sci-Fi'},
-
-{'title': 'No Game No Life', 'year': 2014, 'main_character': 'Sora', 'genres': 'Adventure, Comedy, Fantasy'},
-
-{'title': 'Noragami', 'year': 2014, 'main_character': 'Yato', 'genres': 'Action, Adventure, Supernatural'},
-
-{'title': 'One Piece', 'year': 1999, 'main_character': 'Monkey D. Luffy', 'genres': 'Action, Adventure, Fantasy'},
-
-{'title': 'One Punch Man', 'year': 2015, 'main_character': 'Saitama', 'genres': 'Action, Comedy, Parody'},
-
-{'title': 'Ouran High School Host Club', 'year': 2006, 'main_character': 'Haruhi Fujioka', 'genres': 'Comedy, Romance, School'},
-
-{'title': 'Overlord', 'year': 2015, 'main_character': 'Ainz Ooal Gown', 'genres': 'Isekai, Fantasy, Action'},
-
-{'title': 'Parasyte: The Maxim', 'year': 2014, 'main_character': 'Shinichi Izumi', 'genres': 'Action, Horror, Sci-Fi'},
-
-{'title': 'Psycho-Pass', 'year': 2012, 'main_character': 'Akane Tsunemori', 'genres': 'Sci-Fi, Crime, Cyberpunk'},
-
-{'title': 'Puella Magi Madoka Magica', 'year': 2011, 'main_character': 'Madoka Kaname', 'genres': 'Magical Girl, Psychological, Thriller'},
-
-{'title': 'Ranma 1/2', 'year': 1989, 'main_character': 'Ranma Saotome', 'genres': 'Comedy, Martial Arts, Romance'},
-
-{'title': 'Re:Zero', 'year': 2016, 'main_character': 'Subaru Natsuki', 'genres': 'Isekai, Fantasy, Psychological'},
-
-{'title': 'Rurouni Kenshin', 'year': 1996, 'main_character': 'Kenshin Himura', 'genres': 'Action, Historical, Samurai'},
-
-{'title': 'Sailor Moon', 'year': 1992, 'main_character': 'Usagi Tsukino', 'genres': 'Magical Girl, Romance, Fantasy'},
-
-{'title': 'Samurai Champloo', 'year': 2004, 'main_character': 'Mugen', 'genres': 'Action, Adventure, Samurai'},
-
-{'title': 'Serial Experiments Lain', 'year': 1998, 'main_character': 'Lain Iwakura', 'genres': 'Sci-Fi, Cyberpunk, Psychological'},
-
-{'title': 'Shaman King', 'year': 2001, 'main_character': 'Yoh Asakura', 'genres': 'Action, Adventure, Supernatural'}
-]
+                             {'title': '86', 'year': 2021, 'main_character': 'Shinei Nouzen',
+                              'genres': 'Mecha, Military, Sci-Fi'},
+                             {'title': 'A Place Further Than the Universe', 'year': 2018,
+                              'main_character': 'Mari Tamaki', 'genres': 'Adventure, Slice of Life'},
+                             {'title': 'Afro Samurai', 'year': 2007, 'main_character': 'Afro',
+                              'genres': 'Action, Adventure, Samurai'},
+                             {'title': 'Akame ga Kill!', 'year': 2014, 'main_character': 'Akame',
+                              'genres': 'Action, Dark Fantasy, Drama'},
+                             {'title': 'Akira', 'year': 1988, 'main_character': 'Shotaro Kaneda',
+                              'genres': 'Sci-Fi, Cyberpunk, Action'},
+                             {'title': 'Angel Beats!', 'year': 2010, 'main_character': 'Yuzuru Otonashi',
+                              'genres': 'Drama, Supernatural, Comedy'},
+                             {'title': 'Another', 'year': 2012, 'main_character': 'Koichi Sakakibara',
+                              'genres': 'Horror, Mystery, Supernatural'},
+                             {'title': 'Apothecary Diaries', 'year': 2024, 'main_character': 'Mau-mau',
+                              'genres': 'Romance , Drama '},
+                             {'title': 'Assassination Classroom', 'year': 2015, 'main_character': 'Koro-sensei',
+                              'genres': 'Action, Comedy, School'},
+                             {'title': 'Attack on Titan', 'year': 2013, 'main_character': 'Eren Yeager',
+                              'genres': 'Action, Dark Fantasy, Post-apocalyptic'},
+                             {'title': 'Azumanga Daioh', 'year': 2002, 'main_character': 'Chiyo Mihama',
+                              'genres': 'Comedy, Slice of Life'},
+                             {'title': 'Baccano!', 'year': 2007, 'main_character': 'Isaac Dian',
+                              'genres': 'Action, Mystery, Supernatural'},
+                             {'title': 'Banana Fish', 'year': 2018, 'main_character': 'Ash Lynx',
+                              'genres': 'Action, Thriller, Drama'},
+                             {'title': 'Berserk', 'year': 1997, 'main_character': 'Guts',
+                              'genres': 'Dark Fantasy, Action, Tragedy'},
+                             {'title': 'Black Clover', 'year': 2017, 'main_character': 'Asta',
+                              'genres': 'Action, Fantasy, Adventure'},
+                             {'title': 'Black Lagoon', 'year': 2006, 'main_character': 'Rokuro Okajima',
+                              'genres': 'Action, Crime, Thriller'},
+                             {'title': 'Bleach', 'year': 2004, 'main_character': 'Ichigo Kurosaki',
+                              'genres': 'Action, Supernatural, Adventure'},
+                             {'title': 'Blue Exorcist', 'year': 2011, 'main_character': 'Rin Okumura',
+                              'genres': 'Action, Supernatural, Fantasy'},
+                             {'title': 'Blue lock', 'year': 2022, 'main_character': 'Isagi Yoichi',
+                              'genres': 'Sports, Thriller'},
+                             {'title': 'Bungo Stray Dogs', 'year': 2016, 'main_character': 'Atsushi Nakajima',
+                              'genres': 'Action, Mystery, Supernatural'},
+                             {'title': 'Cardcaptor Sakura', 'year': 1998, 'main_character': 'Sakura Kinomoto',
+                              'genres': 'Magical Girl, Romance, Comedy'},
+                             {'title': 'Castle in the Sky', 'year': 1986, 'main_character': 'Pazu',
+                              'genres': 'Adventure, Fantasy, Sci-Fi'},
+                             {'title': 'Chainsaw Man', 'year': 2022, 'main_character': 'Denji',
+                              'genres': 'Action, Dark Fantasy, Gore'},
+                             {'title': 'Clannad', 'year': 2007, 'main_character': 'Tomoya Okazaki',
+                              'genres': 'Drama, Romance, Slice of Life'},
+                             {'title': 'Code Geass', 'year': 2006, 'main_character': 'Lelouch Lamperouge',
+                              'genres': 'Mecha, Military, Drama'},
+                             {'title': 'Cowboy Bebop', 'year': 1998, 'main_character': 'Spike Spiegel',
+                              'genres': 'Sci-Fi, Space Western, Noir'},
+                             {'title': 'Cyberpunk: Edgerunners', 'year': 2022, 'main_character': 'David Martinez',
+                              'genres': 'Sci-Fi, Action, Cyberpunk'},
+                             {'title': 'D.Gray-man', 'year': 2006, 'main_character': 'Allen Walker',
+                              'genres': 'Action, Adventure, Dark Fantasy'},
+                             {'title': 'Dandadan', 'year': 2025, 'main_character': 'Ken Takakura',
+                              'genres': 'Supernatural, Comedy, Action'},
+                             {'title': 'Darker than Black', 'year': 2007, 'main_character': 'Hei',
+                              'genres': 'Action, Mystery, Sci-Fi'},
+                             {'title': 'Death Note', 'year': 2006, 'main_character': 'Light Yagami',
+                              'genres': 'Psychological Thriller, Supernatural, Mystery'},
+                             {'title': 'Death Parade', 'year': 2015, 'main_character': 'Decim',
+                              'genres': 'Drama, Psychological, Supernatural'},
+                             {'title': 'Demon Slayer', 'year': 2019, 'main_character': 'Tanjiro Kamado',
+                              'genres': 'Action, Dark Fantasy, Adventure'},
+                             {'title': 'Detective Conan', 'year': 1996, 'main_character': 'Shinichi Kudo',
+                              'genres': 'Mystery, Crime, Shounen'},
+                             {'title': 'Devilman Crybaby', 'year': 2018, 'main_character': 'Akira Fudo',
+                              'genres': 'Action, Horror, Supernatural'},
+                             {'title': 'Digimon Adventure', 'year': 1999, 'main_character': 'Taichi Yagami',
+                              'genres': 'Adventure, Fantasy, Sci-Fi'},
+                             {'title': 'Dororo', 'year': 2019, 'main_character': 'Hyakkimaru',
+                              'genres': 'Action, Adventure, Historical'},
+                             {'title': 'Dr. Stone', 'year': 2019, 'main_character': 'Senku Ishigami',
+                              'genres': 'Sci-Fi, Adventure, Shounen'},
+                             {'title': 'Dragon Ball Z', 'year': 1989, 'main_character': 'Goku',
+                              'genres': 'Action, Martial Arts, Adventure'},
+                             {'title': 'Dress up darling', 'year': 2018, 'main_character': 'Gojou',
+                              'genres': 'Romance, Fashion, Drama'},
+                             {'title': 'Durarara!!', 'year': 2010, 'main_character': 'Mikado Ryuugamine',
+                              'genres': 'Action, Mystery, Supernatural'},
+                             {'title': 'Elfen Lied', 'year': 2004, 'main_character': 'Lucy',
+                              'genres': 'Horror, Psychological, Sci-Fi'},
+                             {'title': 'Erased', 'year': 2016, 'main_character': 'Satoru Fujinuma',
+                              'genres': 'Mystery, Psychological, Supernatural'},
+                             {'title': 'Ergo Proxy', 'year': 2006, 'main_character': 'Re-l Mayer',
+                              'genres': 'Sci-Fi, Mystery, Psychological'},
+                             {'title': 'Eureka Seven', 'year': 2005, 'main_character': 'Renton Thurston',
+                              'genres': 'Mecha, Romance, Sci-Fi'},
+                             {'title': 'Eyeshield 21', 'year': 2005, 'main_character': 'Sena Kobayakawa',
+                              'genres': 'Sports, Comedy'},
+                             {'title': 'Fairy Tail', 'year': 2009, 'main_character': 'Natsu Dragneel',
+                              'genres': 'Action, Adventure, Fantasy'},
+                             {'title': 'Fate/Zero', 'year': 2011, 'main_character': 'Kiritsugu Emiya',
+                              'genres': 'Action, Fantasy, Supernatural'},
+                             {'title': 'Fire Force', 'year': 2019, 'main_character': 'Shinra Kusakabe',
+                              'genres': 'Action, Supernatural, Sci-Fi'},
+                             {'title': 'FLCL', 'year': 2000, 'main_character': 'Naota Nandaba',
+                              'genres': 'Sci-Fi, Comedy, Surrealism'},
+                             {'title': 'Food Wars!', 'year': 2015, 'main_character': 'Soma Yukihira',
+                              'genres': 'Gourmet, Comedy, Ecchi'},
+                             {'title': 'Frieren: Beyond Journey’s End', 'year': 2023, 'main_character': 'Frieren',
+                              'genres': 'Fantasy, Drama, Adventure'},
+                             {'title': 'Fruits Basket', 'year': 2019, 'main_character': 'Tohru Honda',
+                              'genres': 'Romance, Drama, Supernatural'},
+                             {'title': 'Fullmetal Alchemist: Brotherhood', 'year': 2009,
+                              'main_character': 'Edward Elric', 'genres': 'Action, Adventure, Dark Fantasy'},
+                             {'title': 'Gachiakuta', 'year': 2025, 'main_character': 'Rudo',
+                              'genres': 'Action, Supernatural'},
+                             {'title': 'Gantz', 'year': 2004, 'main_character': 'Kei Kurono',
+                              'genres': 'Action, Horror, Sci-Fi'},
+                             {'title': 'Gintama', 'year': 2006, 'main_character': 'Gintoki Sakata',
+                              'genres': 'Comedy, Action, Parody'},
+                             {'title': 'Golden Kamuy', 'year': 2018, 'main_character': 'Saichi Sugimoto',
+                              'genres': 'Action, Adventure, Historical'},
+                             {'title': 'Great Teacher Onizuka', 'year': 1999, 'main_character': 'Eikichi Onizuka',
+                              'genres': 'Comedy, Drama, School'},
+                             {'title': 'Guilty Crown', 'year': 2011, 'main_character': 'Shu Ouma',
+                              'genres': 'Action, Sci-Fi, Drama'},
+                             {'title': 'Gurren Lagann', 'year': 2007, 'main_character': 'Simon',
+                              'genres': 'Mecha, Action, Adventure'},
+                             {'title': 'Haikyuu!!', 'year': 2014, 'main_character': 'Shoyo Hinata',
+                              'genres': 'Sports, Comedy, Drama'},
+                             {'title': 'Hell’s Paradise', 'year': 2023, 'main_character': 'Gabimaru',
+                              'genres': 'Action, Adventure, Fantasy'},
+                             {'title': 'Hellsing Ultimate', 'year': 2006, 'main_character': 'Alucard',
+                              'genres': 'Action, Horror, Supernatural'},
+                             {'title': 'High school of the Dead', 'year': 2006, 'main_character': 'Takashi',
+                              'genres': 'Ecchi, Supernatural'},
+                             {'title': 'Hunter x Hunter', 'year': 2011, 'main_character': 'Gon Freecss',
+                              'genres': 'Action, Adventure, Fantasy'},
+                             {'title': 'InuYasha', 'year': 2000, 'main_character': 'Inuyasha',
+                              'genres': 'Action, Adventure, Fantasy'},
+                             {'title': 'JoJo’s Bizarre Adventure', 'year': 2012, 'main_character': 'Jonathan Joestar',
+                              'genres': 'Action, Adventure, Supernatural'},
+                             {'title': 'Jujutsu Kaisen', 'year': 2020, 'main_character': 'Yuji Itadori',
+                              'genres': 'Action, Supernatural, Fantasy'},
+                             {'title': 'Kaguya-sama: Love is War', 'year': 2019, 'main_character': 'Kaguya Shinomiya',
+                              'genres': 'Comedy, Romance, Psychological'},
+                             {'title': 'Kaiju No. 8', 'year': 2025, 'main_character': 'Kafka Hibino',
+                              'genres': 'Action, Sci-Fi, Fantasy'},
+                             {'title': 'Kill la Kill', 'year': 2013, 'main_character': 'Ryuko Matoi',
+                              'genres': 'Action, Comedy, Ecchi'},
+                             {'title': 'Kimi ni Todoke', 'year': 2009, 'main_character': 'Sawako Kuronuma',
+                              'genres': 'Romance, Slice of Life, School'},
+                             {'title': 'Kingdom', 'year': 2012, 'main_character': 'Li Xin',
+                              'genres': 'Action, Historical, Military'},
+                             {'title': 'KonoSuba', 'year': 2016, 'main_character': 'Kazuma Satou',
+                              'genres': 'Comedy, Fantasy, Isekai'},
+                             {'title': 'Kuroko’s Basketball', 'year': 2012, 'main_character': 'Tetsuya Kuroko',
+                              'genres': 'Sports, Comedy'},
+                             {'title': 'Land of the Lustrous', 'year': 2017, 'main_character': 'Phosphophyllite',
+                              'genres': 'Fantasy, Action, Drama'},
+                             {'title': 'Legend of the Galactic Heroes', 'year': 1988,
+                              'main_character': 'Reinhard von Lohengramm', 'genres': 'Sci-Fi, Military, Drama'},
+                             {'title': 'Log Horizon', 'year': 2013, 'main_character': 'Shiroe',
+                              'genres': 'Adventure, Fantasy, Sci-Fi'},
+                             {'title': 'Lord of the Mysteries', 'year': 2025, 'main_character': 'Klein Moretti',
+                              'genres': 'Mystery, Fantasy, Supernatural'},
+                             {'title': 'Love, Chunibyo & Other Delusions', 'year': 2012,
+                              'main_character': 'Yuta Togashi', 'genres': 'Comedy, Romance'},
+                             {'title': 'Lucky Star', 'year': 2007, 'main_character': 'Konata Izumi',
+                              'genres': 'Comedy, Slice of Life'},
+                             {'title': 'Made in Abyss', 'year': 2017, 'main_character': 'Riko',
+                              'genres': 'Adventure, Dark Fantasy, Drama'},
+                             {'title': 'Magi: The Labyrinth of Magic', 'year': 2012, 'main_character': 'Aladdin',
+                              'genres': 'Adventure, Fantasy, Action'},
+                             {'title': 'March Comes in Like a Lion', 'year': 2016, 'main_character': 'Rei Kiriyama',
+                              'genres': 'Drama, Slice of Life'},
+                             {'title': 'Masamune-kun\'s Revenge', 'year': 2017, 'main_character': 'Masamune Makabe',
+                              'genres': 'Romantic Comedy, Slice of Life'},
+                             {'title': 'Mashle: Magic and Muscles', 'year': 2023, 'main_character': 'Mash Burnedead',
+                              'genres': 'Comedy, Fantasy, Action'},
+                             {'title': 'Mob Psycho 100', 'year': 2016, 'main_character': 'Shigeo "Mob" Kageyama',
+                              'genres': 'Action, Comedy, Supernatural'},
+                             {'title': 'Monster', 'year': 2004, 'main_character': 'Kenzo Tenma',
+                              'genres': 'Psychological Thriller, Mystery, Noir'},
+                             {'title': 'Mushishi', 'year': 2005, 'main_character': 'Ginko',
+                              'genres': 'Adventure, Supernatural, Mystery'},
+                             {'title': 'My Hero Academia', 'year': 2016, 'main_character': 'Izuku Midoriya',
+                              'genres': 'Action, Superhero, Coming-of-age'},
+                             {'title': 'Nana', 'year': 2006, 'main_character': 'Nana Osaki',
+                              'genres': 'Drama, Romance, Music'},
+                             {'title': 'Naruto', 'year': 2002, 'main_character': 'Naruto Uzumaki',
+                              'genres': 'Action, Adventure, Coming-of-age'},
+                             {'title': 'Neon Genesis Evangelion', 'year': 1995, 'main_character': 'Shinji Ikari',
+                              'genres': 'Mecha, Psychological, Drama'},
+                             {'title': 'No Game No Life', 'year': 2014, 'main_character': 'Sora',
+                              'genres': 'Adventure, Comedy, Fantasy'},
+                             {'title': 'Noragami', 'year': 2014, 'main_character': 'Yato',
+                              'genres': 'Action, Adventure, Supernatural'},
+                             {'title': 'One Piece', 'year': 1999, 'main_character': 'Monkey D. Luffy',
+                              'genres': 'Action, Adventure, Fantasy'},
+                             {'title': 'One Punch Man', 'year': 2015, 'main_character': 'Saitama',
+                              'genres': 'Action, Comedy, Superhero'},
+                             {'title': 'Oshi no Ko', 'year': 2023, 'main_character': 'Aqua Hoshino',
+                              'genres': 'Drama, Mystery, Supernatural'},
+                             {'title': 'Ouran High School Host Club', 'year': 2006, 'main_character': 'Haruhi Fujioka',
+                              'genres': 'Comedy, Romance, School'},
+                             {'title': 'Overlord', 'year': 2015, 'main_character': 'Ainz Ooal Gown',
+                              'genres': 'Isekai, Fantasy, Action'},
+                             {'title': 'Parasyte: The Maxim', 'year': 2014, 'main_character': 'Shinichi Izumi',
+                              'genres': 'Horror, Sci-Fi, Action'},
+                             {'title': 'Pokemon', 'year': 1997, 'main_character': 'Ash Ketchum',
+                              'genres': 'Adventure, Fantasy, Family'},
+                             {'title': 'Psycho-Pass', 'year': 2012, 'main_character': 'Akane Tsunemori',
+                              'genres': 'Sci-Fi, Crime, Cyberpunk'},
+                             {'title': 'Puella Magi Madoka Magica', 'year': 2011, 'main_character': 'Madoka Kaname',
+                              'genres': 'Magical Girl, Psychological, Thriller'},
+                             {'title': 'Ranma 1/2', 'year': 1989, 'main_character': 'Ranma Saotome',
+                              'genres': 'Comedy, Martial Arts, Romance'},
+                             {'title': 'Re:Zero', 'year': 2016, 'main_character': 'Subaru Natsuki',
+                              'genres': 'Fantasy, Isekai, Drama'},
+                             {'title': 'Record of Ragnarok', 'year': 2017, 'main_character': 'Brunhilde',
+                              'genres': 'Adventure, Dark fantasy, Martial arts'},
+                             {'title': 'Rurouni Kenshin', 'year': 1996, 'main_character': 'Kenshin Himura',
+                              'genres': 'Action, Historical, Samurai'},
+                             {'title': 'Sailor Moon', 'year': 1992, 'main_character': 'Usagi Tsukino',
+                              'genres': 'Magical Girl, Romance, Fantasy'},
+                             {'title': 'Sakamoto Days', 'year': 2025, 'main_character': 'Taro Sakamoto',
+                              'genres': 'Action, Comedy'},
+                             {'title': 'Samurai Champloo', 'year': 2004, 'main_character': 'Mugen & Jin',
+                              'genres': 'Action, Historical, Adventure'},
+                             {'title': 'Sentenced to be a hero', 'year': 2026, 'main_character': 'Xylo Forbartz',
+                              'genres': 'Dark fantasy'},
+                             {'title': 'Serial Experiments Lain', 'year': 1998, 'main_character': 'Lain Iwakura',
+                              'genres': 'Sci-Fi, Cyberpunk, Psychological'},
+                             {'title': 'Shaman King', 'year': 2001, 'main_character': 'Yoh Asakura',
+                              'genres': 'Action, Adventure, Supernatural'},
+                             {'title': 'Solo Leveling', 'year': 2024, 'main_character': 'Sung Jin-Woo',
+                              'genres': 'Action, Fantasy, Adventure'},
+                             {'title': 'Spy x Family', 'year': 2022, 'main_character': 'Loid Forger',
+                              'genres': 'Comedy, Action, Slice of Life'},
+                             {'title': 'Steins;Gate', 'year': 2011, 'main_character': 'Rintarou Okabe',
+                              'genres': 'Sci-Fi, Thriller, Drama'},
+                             {'title': 'The Eminence in Shadow', 'year': 2022, 'main_character': 'Cid Kagenou',
+                              'genres': 'Action, Comedy, Fantasy'},
+                             {'title': 'The Summer Hikaru Died', 'year': 2025, 'main_character': 'Yoshiki',
+                              'genres': 'Psychological Thriller, Supernatural, Horror'},
+                             {'title': 'Tokyo Ghoul', 'year': 2014, 'main_character': 'Kaneki Ken',
+                              'genres': 'Dark Fantasy, Horror, Action'},
+                             {'title': 'Toradora!', 'year': 2008, 'main_character': 'Ryuuji Takasu',
+                              'genres': 'Romantic Comedy, Slice of Life'},
+                             {'title': 'Tougen Anki', 'year': 2025, 'main_character': 'Shiki Ichinose',
+                              'genres': 'Action, Dark Fantasy, Supernatural'},
+                             {'title': 'Trigun', 'year': 1998, 'main_character': 'Vash the Stampede',
+                              'genres': 'Action, Sci-Fi, Western'},
+                             {'title': 'Vinland Saga', 'year': 2019, 'main_character': 'Thorfinn',
+                              'genres': 'Historical, Action, Drama'},
+                             {'title': 'Wind Breaker', 'year': 2024, 'main_character': 'Haruka Sakura',
+                              'genres': 'Action, Delinquent'}
+                         ]
 
 
 @app.route("/")

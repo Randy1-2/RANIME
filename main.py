@@ -347,6 +347,13 @@ def blog():
             "impact": "The ultimate 'hero's return' that cemented Naruto's legacy as the village's protector."
         },
         {
+            "title": "Juuni Taisen",
+            "tag": "Action, Suspense",
+            "moment": "Inounoshishi gets killed by Usagi",
+            "episode": "Episode 1",
+            "impact": "It became the decisive turning point that shifted the Zodiac War from a strategic battle into a literal horror show. "
+        },
+        {
             "title": "Toradora!",
             "tag": "Romance, Slice of Life",
             "moment": "Taiga breaks down in the street, realizing her true feelings for Ryuuji after he leaves her apartment.",

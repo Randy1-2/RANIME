@@ -170,6 +170,45 @@ nav a:hover {
 h5{
 font-style: segoe script;
 }
+/* Basic Table Reset */
+table {
+    width: 100%;
+    border-collapse: collapse; /* This merges double borders into one */
+    margin: 20px 0;
+    font-family: sans-serif;
+    background-color: #fff;
+}
+
+/* Style the Header */
+th {
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 12px;
+}
+
+/* Style the Cells */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top; /* Keeps text aligned at the top of the row */
+}
+
+/* Style the "Impact Cell" to wrap text nicely */
+.impact-cell {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Make every other row a different color for readability */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Highlight the "Champion" row if you used that class */
+.champion {
+    border-left: 5px solid #ff4757;
+}
 .carousel-item img {
   max-height: 350px;
   width: 100%;

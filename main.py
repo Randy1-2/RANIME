@@ -160,7 +160,7 @@ ANIME_DATA = [
                               'genres': 'Mecha, Action, Adventure'},
                              {'title': 'Haikyuu!!', 'year': 2014, 'main_character': 'Shoyo Hinata',
                               'genres': 'Sports, Comedy, Drama'},
-                             {'title': 'Hell’s Paradise', 'year': 2023, 'main_character': 'Gabimaru',
+                             {'title': 'Hells Paradise', 'year': 2023, 'main_character': 'Gabimaru',
                               'genres': 'Action, Adventure, Fantasy'},
                              {'title': 'Hellsing Ultimate', 'year': 2006, 'main_character': 'Alucard',
                               'genres': 'Action, Horror, Supernatural'},
